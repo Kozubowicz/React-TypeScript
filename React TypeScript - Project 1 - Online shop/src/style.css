@@ -45,9 +45,14 @@ button {
   height: 100%;
   background-color: rgb(56, 55, 55);
   box-shadow: 0px 0px 20px rgba(0, 238, 20, 0.911);
-  transition: right 0.3s ease;
   right: 0;
   overflow-y: auto;
+  transform: translateX(120%);
+  transition: transform 0.4s ease-in-out;
+}
+
+#offcanvas.open {
+  transform: translateX(0%);
 }
 
 .closeOffcanvasButton {

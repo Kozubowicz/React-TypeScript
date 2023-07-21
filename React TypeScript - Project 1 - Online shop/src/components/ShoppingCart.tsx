@@ -25,24 +25,22 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
 
   return (
     <>
-      {isOpen && (
-        <div id="offcanvas">
-          <button className="closeOffcanvasButton" onClick={() => closeCart()}>
-            X
-          </button>
-          {storeItems
-            .filter((e) => cartItems.some((f) => e.id === f.id))
-            .map((e) => (
-              <CartItem {...e} key={e.id} />
-            ))}
+      <div id="offcanvas" className={isOpen ? "open" : ""}>
+        <button className="closeOffcanvasButton" onClick={() => closeCart()}>
+          X
+        </button>
+        {storeItems
+          .filter((e) => cartItems.some((f) => e.id === f.id))
+          .map((e) => (
+            <CartItem {...e} key={e.id} />
+          ))}
 
-          {
-            <div>
-              <h2>Total price: {formatCurrency(itemsPrice)}</h2>
-            </div>
-          }
-        </div>
-      )}
+        {
+          <div>
+            <h2>Total price: {formatCurrency(itemsPrice)}</h2>
+          </div>
+        }
+      </div>
     </>
   );
 }
