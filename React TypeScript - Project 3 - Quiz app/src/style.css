@@ -4,10 +4,11 @@ body {
   font-family: "Times New Roman", Times, serif;
   margin: 0;
 }
-input[type="text"] {
+.inputField {
   color: white;
   background-color: transparent;
-  font-size: 1.4rem;
+  font-size: 1rem;
+  padding: 0.3rem 0.2rem;
 }
 
 input[type="radio"] {
@@ -68,17 +69,25 @@ input[type="radio"]:checked:before {
   gap: 2rem;
 }
 .QuizListContainer {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
   padding: 1rem 0rem;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgb(186, 186, 187);
 }
+.QuizListTitleContainer {
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid;
+  margin-bottom: 1rem;
+}
 .QuizListTitle {
   font-size: 1.5rem;
   font-weight: 600;
-  margin: 0rem 1rem;
-  display: flex;
-  justify-content: center;
+  margin: 0rem 1rem 0.2rem 1rem;
 }
+
 .QuizListNum {
   font-weight: 500;
   font-size: 1.2rem;
@@ -97,9 +106,8 @@ input[type="radio"]:checked:before {
   margin: 2rem;
   padding: 1rem;
   border-radius: 20px;
-
   max-width: 600px;
-  width: 90vw;
+  width: 80vw;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -121,7 +129,6 @@ input[type="radio"]:checked:before {
 .QuizButtonContainer {
   display: flex;
   justify-content: flex-end;
-  flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem;
 }

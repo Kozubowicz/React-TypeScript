@@ -11,7 +11,7 @@ type Quiz = {
 type QuizStartProps = {
   questionIndex: number;
   setQuestionIndex: (e: number) => void;
-  userAnswers: number[];
+  userAnswers: Map<number, number>;
   correctAnswers: number[];
   Quiz: Quiz;
 };
@@ -38,11 +38,17 @@ export function QuizReview({
               className={`AnswerContainer ${
                 correctAnswers[questionIndex] === i ? "ReviewAnswerCorrect" : "non"
               }
-                  ${userAnswers[questionIndex] === i ? "ReviewAnswerUser" : "non"}
+                  ${userAnswers.get(questionIndex) === i ? "ReviewAnswerUser" : "non"}
               }`}
               key={`${i}div`}
             >
-              <input type="radio" value={i} key={i} checked={userAnswers[questionIndex] === i} />
+              <input
+                type="radio"
+                onChange={() => console.log(i)}
+                value={i}
+                key={i}
+                checked={userAnswers.get(questionIndex) === i}
+              />
 
               {e}
             </div>
@@ -50,6 +56,17 @@ export function QuizReview({
         </div>
 
         <div className="QuizButtonContainer">
+          {questionIndex > 0 && (
+            <button
+              className="StartButton"
+              onClick={() => {
+                setQuestionIndex(questionIndex - 1);
+              }}
+            >
+              Previous Question
+            </button>
+          )}
+
           <button
             className="StartButton"
             onClick={() => {

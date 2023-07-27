@@ -37,8 +37,10 @@ export function ListOfQuizzes({ setMode }: ListOfQuizzesProps) {
                 setMode(e._id);
               }}
             >
-              <label className="QuizListTitle">{e.name}</label>
-              <hr />
+              <label className="QuizListTitleContainer">
+                <label className="QuizListTitle">{e.name}</label>
+              </label>
+
               <label className="QuizListNum">Questions: {e.length}</label>
             </div>
           ))}

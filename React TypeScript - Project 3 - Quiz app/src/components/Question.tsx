@@ -1,4 +1,3 @@
-import { useState } from "react";
 type Quiz = {
   _id: string;
   name: string;
@@ -12,13 +11,18 @@ type Quiz = {
 type QuizStartProps = {
   questionIndex: number;
   setQuestionIndex: (e: number) => void;
-  addAnswer: (and: number) => void;
+  addAnswer: (index: number, ans: number) => void;
   Quiz: Quiz;
+  userAnswers: Map<number, number>;
 };
 
-export function Question({ questionIndex, setQuestionIndex, addAnswer, Quiz }: QuizStartProps) {
-  const [answer, setAnswer] = useState<number>(-1);
-
+export function Question({
+  questionIndex,
+  setQuestionIndex,
+  addAnswer,
+  Quiz,
+  userAnswers,
+}: QuizStartProps) {
   return (
     <>
       <div className="QuestionContainer">
@@ -36,9 +40,9 @@ export function Question({ questionIndex, setQuestionIndex, addAnswer, Quiz }: Q
                 value={i}
                 key={i}
                 className="radio"
-                checked={answer === i}
+                checked={userAnswers.get(questionIndex) === i}
                 onChange={() => {
-                  setAnswer(i);
+                  addAnswer(questionIndex, i);
                 }}
               />
               {e}
@@ -47,12 +51,20 @@ export function Question({ questionIndex, setQuestionIndex, addAnswer, Quiz }: Q
         </div>
 
         <div className="QuizButtonContainer">
+          {questionIndex > 0 && (
+            <button
+              className="StartButton"
+              onClick={() => {
+                setQuestionIndex(questionIndex - 1);
+              }}
+            >
+              Previous Question
+            </button>
+          )}
           <button
             className="StartButton"
             onClick={() => {
               setQuestionIndex(questionIndex + 1);
-              addAnswer(answer);
-              setAnswer(-1);
             }}
           >
             {questionIndex + 1 !== Quiz.quiz.length ? "Next Question" : "Summary"}

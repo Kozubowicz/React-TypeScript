@@ -8,7 +8,7 @@ type QuizSummaryProps = {
   setRepeat: (e: number) => void;
 
   length: number | undefined;
-  userAnswers: number[];
+  userAnswers: Map<number, number>;
   correctAnswers: number[];
   repeat: number;
 };
@@ -25,11 +25,12 @@ export function QuizSummary({
 }: QuizSummaryProps) {
   const [corr, setCorr] = useState(0);
   const [inCorr, setInCorr] = useState(0);
+
   useEffect(() => {
     setCorr(0);
     setInCorr(0);
     correctAnswers.forEach((e, i) => {
-      if (e === userAnswers[i]) {
+      if (e === userAnswers.get(i)) {
         setCorr((prev) => prev + 1);
       } else setInCorr((prev) => prev + 1);
     });

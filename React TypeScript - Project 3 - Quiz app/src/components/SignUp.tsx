@@ -28,17 +28,17 @@ export function SignUp() {
           <div className="querryInputsContainer">
             <div className="inputLabelcontainer">
               <label>User Name:</label>
-              <input type="text" ref={UserName} />
+              <input type="text" ref={UserName} className="inputField" />
             </div>
             <div className="inputLabelcontainer">
               <label>Password:</label>
-              <input type="text" ref={Password} />
+              <input type="password" ref={Password} className="inputField" />
             </div>
           </div>
           <div className="QuizButtonContainer">
             {message}
             <button className="StartButton" onClick={() => hanleSend()}>
-              LogIn
+              Sign Up
             </button>
           </div>
         </div>

@@ -19,14 +19,16 @@ type Quiz = {
 export function Quiz({ mode, setMode }: QuizProps) {
   const { getQuiz } = useQuizContext();
 
-  const [questionIndex, setQuestionIndex] = useState<number>(-1);
-  const [userAnswers, setUserAnswers] = useState<number[]>([]);
-  const [reviewMode, setReviewMode] = useState<number>(0);
-
   const [Quiz, setQuiz] = useState<Quiz>();
   const [length, setLength] = useState<number>(0);
+  const [questionIndex, setQuestionIndex] = useState<number>(-1);
+
   const [correctAnswers, setCorrectAnswers] = useState<number[]>([]);
+  const [userAnswers, setUserAnswers] = useState<Map<number, number>>(new Map());
+
   const [repeat, setRepeat] = useState<number>(0);
+  const [reviewMode, setReviewMode] = useState<number>(0);
+
   useEffect(() => {
     const getData = async () => {
       try {
@@ -42,11 +44,13 @@ export function Quiz({ mode, setMode }: QuizProps) {
       }
     };
     getData();
-    setUserAnswers([]);
+    setUserAnswers(new Map());
   }, [repeat]);
 
-  const addAnswer = (ans: number) => {
-    setUserAnswers([...userAnswers, ans]);
+  const addAnswer = (index: number, ans: number) => {
+    const newMap = new Map(userAnswers);
+    newMap.set(index, ans);
+    setUserAnswers(newMap);
   };
 
   return (
@@ -63,6 +67,7 @@ export function Quiz({ mode, setMode }: QuizProps) {
               setQuestionIndex={setQuestionIndex}
               addAnswer={addAnswer}
               Quiz={Quiz}
+              userAnswers={userAnswers}
             />
           )}
           {questionIndex >= 0 && questionIndex < length && reviewMode === 1 && (
@@ -88,7 +93,9 @@ export function Quiz({ mode, setMode }: QuizProps) {
           )}
         </div>
       ) : (
-        <>No data </>
+        <>
+          <div className="homeContainer">Downloading Quiz</div>
+        </>
       )}
     </>
   );
