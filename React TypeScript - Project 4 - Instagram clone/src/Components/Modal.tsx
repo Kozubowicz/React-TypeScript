@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useInstaContext } from "../Context/InstaContext";
 import { FaHeart, FaRegHeart, FaRegComment } from "react-icons/fa";
+import { MyProfile } from "./MyProfile";
 
 export function Modal() {
-  const { aspectRatio, setModalOn, modalImg, modalUser, setUserId } = useInstaContext();
+  const { aspectRatio, setModalOn, modalImg, modalUser } = useInstaContext();
   const [isLiked, setIsLiked] = useState(false);
 
   return (
@@ -18,24 +19,13 @@ export function Modal() {
           <div className="ModalUserCommentsReactionsContainer">
             <div className="ModalUserCommentsContainer">
               <div className="ModalUserProfileName">
-                <img
-                  src={modalUser.profileImg}
-                  onClick={() => {
-                    setUserId(modalUser.profileImg);
-                    setModalOn(false);
-                  }}
-                  className="PostProfilePicture"
+                <MyProfile
+                  profileImgSize={"40px"}
+                  profileImgUrl={modalUser.profileImg}
+                  profileId={modalUser.userId}
+                  profileName={modalUser.userName}
+                  profile={false}
                 />
-                <div
-                  key={modalUser.userName}
-                  onClick={() => {
-                    setUserId(modalUser.userId);
-                    setModalOn(false);
-                  }}
-                  className="PostUserName"
-                >
-                  {modalUser.userName}
-                </div>
               </div>
             </div>
             <div className={`ReactionButtonsContainer ${aspectRatio < 0.9 && "mobile"}`}>

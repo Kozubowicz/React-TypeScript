@@ -1,4 +1,5 @@
 import { useInstaContext } from "../Context/InstaContext";
+import { MyProfile } from "./MyProfile";
 import Logo from "/Logo.png";
 
 export function NavBar() {
@@ -10,11 +11,13 @@ export function NavBar() {
     aspectRatio,
     searchUserResult,
     serachUser,
+    tokenId,
+    myProfile,
   } = useInstaContext();
 
   return (
     <>
-      <div className={`NavBar ${aspectRatio <= 0.9 ? "mobile" : ""}`}>
+      <div className={`NavBar ${aspectRatio <= 0.9 ? "mobile" : ""} ${DarkMode && "dark"}`}>
         <div>
           <div className="LightDarkModeSet">
             Dark Mode
@@ -33,7 +36,7 @@ export function NavBar() {
 
           <input
             type="text"
-            className={`searchBar ${DarkMode ? "dark" : ""}`}
+            className={`inputBar ${DarkMode ? "dark" : ""}`}
             onChange={(e) => serachUser(e.target.value)}
           />
 
@@ -49,6 +52,17 @@ export function NavBar() {
             ))}
           </div>
         </div>
+        {tokenId && (
+          <div style={{ padding: "0vh 0vh 10rem 0vh" }}>
+            <MyProfile
+              profileImgSize={"30px"}
+              profileImgUrl={myProfile.profileImg}
+              profileId={myProfile._id}
+              profileName={myProfile.userName}
+              profile={true}
+            />
+          </div>
+        )}
       </div>
     </>
   );

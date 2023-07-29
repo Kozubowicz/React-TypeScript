@@ -1,7 +1,14 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 type InstaContextProvider = {
   children: ReactNode;
+};
+type MyProfile = {
+  _id: string;
+  userName: string;
+  profileImg: string;
+  description: string;
 };
 type PostType = {
   _id: string;
@@ -40,6 +47,14 @@ type searchUserResult = {
 };
 
 type InstaContext = {
+  setSucess: (e: boolean | undefined) => void;
+  sucess: boolean | undefined;
+  tokenId: string;
+  myProfile: MyProfile;
+  LogIn: (email: string, password: string) => void;
+  SignOut: () => void;
+  SignUp: (userName: string, email: string, password: string) => Promise<string>;
+
   DarkMode: boolean;
   LightDarkModeChanger: (e: void) => void;
   aspectRatio: number;
@@ -55,7 +70,8 @@ type InstaContext = {
   userId: string;
   setUserId: (_id: string) => void;
 
-  getUserProfile: () => Promise<UserProfile>;
+  userProfile: UserProfile;
+  getUserProfile: (_id: string) => Promise<void>;
 
   getPosts: () => Promise<PostType[]>;
 
@@ -69,8 +85,12 @@ export function useInstaContext() {
   return useContext(InstaContext);
 }
 export function InstaContextProvider({ children }: InstaContextProvider) {
+  const [sucess, setSucess] = useState<boolean | undefined>();
+  const [tokenId, setTokenId] = useLocalStorage<string>("tokenId", "");
+  const [myProfile, setMyProfile] = useState<MyProfile>({} as MyProfile);
+
   const [userId, setUserId] = useState<string>("");
-  const [DarkMode, setDarkMode] = useState<boolean>(true);
+  const [DarkMode, setDarkMode] = useLocalStorage<boolean>("DarkMode", true);
   const [aspectRatio, setAspectRatio] = useState<number>(0);
   const [showNavBar, setShowNavBar] = useState<boolean>(false);
   const [modalOn, setModalOn] = useState<boolean>(false);
@@ -78,6 +98,7 @@ export function InstaContextProvider({ children }: InstaContextProvider) {
   const [modalUser, setModalUser] = useState<ModalUser>({} as ModalUser);
 
   const [searchUserResult, setSearchUserResult] = useState<searchUserResult[]>([]);
+  const [userProfile, setUserProfile] = useState<UserProfile>({} as UserProfile);
 
   function handleResize(): void {
     const { innerWidth, innerHeight } = window;
@@ -99,6 +120,63 @@ export function InstaContextProvider({ children }: InstaContextProvider) {
     handleResize();
   }, [DarkMode]);
 
+  useEffect(() => {
+    const getMyProfile = async () => {
+      if (tokenId.length > 5) {
+        try {
+          const response = await fetch(
+            `https://us-east-1.aws.data.mongodb-api.com/app/instacloneapi-phjfx/endpoint/getMyProfile?userId=${tokenId}`
+          );
+          if (!response.ok) {
+            throw new Error();
+          }
+          const jsonData = await response.json();
+          setMyProfile(jsonData);
+        } catch (error) {
+          console.error("Error");
+        }
+      }
+    };
+    getMyProfile();
+  }, [tokenId]);
+
+  const SignOut = () => setTokenId("");
+
+  async function LogIn(email: string, password: string): Promise<void> {
+    try {
+      const response = await fetch(
+        `https://us-east-1.aws.data.mongodb-api.com/app/instacloneapi-phjfx/endpoint/LogIn?email=${email}&password=${password}`
+      );
+      if (!response.ok) {
+        setSucess(false);
+        throw new Error();
+      }
+      const jsonData = await response.json();
+      setTokenId(jsonData);
+    } catch (error) {
+      console.error("Error Logn In");
+      throw error;
+    }
+  }
+
+  async function SignUp(userName: string, email: string, password: string): Promise<string> {
+    try {
+      const response = await fetch(
+        `https://us-east-1.aws.data.mongodb-api.com/app/instacloneapi-phjfx/endpoint/SingUp?userName=${userName}&email=${email}&password=${password}`
+      );
+      if (!response.ok) {
+        setSucess(false);
+        throw new Error();
+      }
+      setSucess(true);
+      const jsonData = await response.json();
+      return jsonData as string;
+    } catch (error) {
+      console.error("Error");
+      throw error;
+    }
+  }
+
   async function getPosts(): Promise<PostType[]> {
     try {
       const response = await fetch(
@@ -116,18 +194,18 @@ export function InstaContextProvider({ children }: InstaContextProvider) {
     }
   }
 
-  async function getUserProfile(): Promise<UserProfile> {
+  async function getUserProfile(_id: String): Promise<void> {
     try {
       const response = await fetch(
-        `https://us-east-1.aws.data.mongodb-api.com/app/instacloneapi-phjfx/endpoint/getProfile?userId=${userId}`
+        `https://us-east-1.aws.data.mongodb-api.com/app/instacloneapi-phjfx/endpoint/getProfile?userId=${_id}`
       );
 
       if (!response.ok) {
         throw new Error();
       }
       const jsonData = await response.json();
-
-      return jsonData;
+      setUserProfile(jsonData);
+      //return jsonData;
     } catch (error) {
       console.error("Error");
       throw error;
@@ -144,7 +222,6 @@ export function InstaContextProvider({ children }: InstaContextProvider) {
           throw new Error();
         }
         const jsonData = await response.json();
-        console.log(jsonData);
 
         setSearchUserResult(jsonData);
       } catch (error) {
@@ -157,6 +234,14 @@ export function InstaContextProvider({ children }: InstaContextProvider) {
     <>
       <InstaContext.Provider
         value={{
+          setSucess,
+          sucess,
+          tokenId,
+          myProfile,
+          LogIn,
+          SignOut,
+          SignUp,
+
           LightDarkModeChanger,
           DarkMode,
           userId,
@@ -172,6 +257,7 @@ export function InstaContextProvider({ children }: InstaContextProvider) {
           modalUser,
           getPosts,
 
+          userProfile,
           getUserProfile,
 
           serachUser,

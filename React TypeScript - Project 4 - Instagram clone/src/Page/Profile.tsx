@@ -1,36 +1,13 @@
+import { MyProfile } from "../Components/MyProfile";
 import { useInstaContext } from "../Context/InstaContext";
-import { useEffect, useState } from "react";
-
-type UserProfile = {
-  _id: string;
-  userName: string;
-  profileImg: string;
-  description: string;
-  posts: UserPosts[];
-};
-type UserPosts = {
-  _id: string;
-  userId: string;
-  name: string;
-  description: string;
-  imgUrl: string;
-};
+import { useEffect } from "react";
 
 export function Profile() {
-  const { getUserProfile, setModalOn, setModalImg, setModalUser, userId } = useInstaContext();
-  const [userProfile, setUserProfile] = useState<UserProfile>();
+  const { getUserProfile, setModalOn, setModalImg, setModalUser, userId, userProfile } =
+    useInstaContext();
 
   useEffect(() => {
-    const fetachPost = async () => {
-      try {
-        const tmp = await getUserProfile();
-        setUserProfile(tmp);
-      } catch (error) {
-        console.error("Error");
-        return [];
-      }
-    };
-    fetachPost();
+    getUserProfile(userId);
   }, [userId]);
 
   return (
@@ -40,10 +17,17 @@ export function Profile() {
           <div className="ProfileAbout">
             <div className="ProfileImgName">
               <div className="ProfileNameReaction">
-                <div className="ProfilePicture">
-                  <img src={userProfile.profileImg} style={{ width: "80px" }} />
+                {/*<div className="ProfilePicture">
+                  <img src={userProfile.profileImg} style={{ width: "65px" }} />
                 </div>
-                <label className="ProfileName">{userProfile.userName}</label>
+      <label className="ProfileName">{userProfile.userName}</label>*/}
+                <MyProfile
+                  profileImgSize={"90px"}
+                  profileImgUrl={userProfile.profileImg}
+                  profileId={userProfile._id}
+                  profileName={userProfile.userName}
+                  profile={true}
+                />
               </div>
               <div className="ProfileButtonsContainer">
                 <button>Follow</button>

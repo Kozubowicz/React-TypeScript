@@ -7,12 +7,12 @@ body.dark {
   color: white;
 }
 button {
-  background-color: rgb(4, 134, 209);
+  background-color: rgb(16, 87, 128);
   color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding: 0.3rem 1.5rem;
   border-radius: 1rem;
-  font-weight: 800;
+  font-weight: 700;
   border: 1px solid slategray;
 }
 ::-webkit-scrollbar {
@@ -40,7 +40,9 @@ button {
   bottom: 0;
   right: 0;
   padding: 10px;
+  gap: 1rem;
   width: 100vw;
+  height: 5vh;
   z-index: 999;
 }
 .NavBarMini.dark {
@@ -50,6 +52,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   align-items: center;
   height: 100vh;
   border-right: 2px solid silver;
@@ -59,8 +62,22 @@ button {
 }
 .NavBar.mobile {
   position: fixed;
+  background-color: white;
+  z-index: 997;
+}
+.NavBar.mobile.dark {
+  position: fixed;
   background-color: black;
   z-index: 997;
+}
+
+.MyProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }
 .LightDarkModeSet {
   display: flex;
@@ -76,7 +93,7 @@ button {
   width: 1.1rem;
   height: 1.1rem;
 }
-.searchBar {
+.inputBar {
   background-color: transparent;
   color: black;
   margin: 0 20px;
@@ -84,7 +101,7 @@ button {
   border-radius: 20px;
   padding: 0.2rem 0.4rem;
 }
-.searchBar.dark {
+.inputBar.dark {
   color: white;
 }
 
@@ -119,6 +136,7 @@ button {
 .userListElement:hover {
   cursor: pointer;
 }
+
 .HomePage {
   display: flex;
   flex-direction: column;
@@ -131,22 +149,9 @@ button {
   justify-content: center;
   gap: 1rem;
   padding: 0.5rem;
-
   border-bottom: 1px solid rgb(119, 117, 117);
 }
-.UserProfileName {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0rem 1rem;
-}
-.PostProfilePicture {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  object-fit: contain;
-  border: 2px solid rgb(252, 34, 186);
-}
+
 .PostImageContainer {
   display: flex;
   justify-content: center;
@@ -191,10 +196,13 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: calc(80px);
   border-radius: 50%;
   border: 3px solid rgb(252, 34, 186);
+}
+.ProfilePicture:hover {
+  cursor: pointer;
 }
 
 .ProfileButtonsContainer {
@@ -205,11 +213,6 @@ button {
 
 .ProfileDescription {
   text-align: justify;
-}
-
-.ProfileName {
-  font-size: 2.5rem;
-  font-weight: bold;
 }
 
 .ProfileGallery {
@@ -230,13 +233,6 @@ button {
   object-fit: contain;
 }
 
-.PostProfilePicture:hover {
-  cursor: pointer;
-}
-.PostUserName {
-  cursor: pointer;
-}
-
 .ModalWindow {
   position: fixed;
   top: 0;
@@ -247,8 +243,7 @@ button {
   z-index: 998;
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-around;
-  padding: 1rem;
+  justify-content: center;
 }
 .closeButtonContainer {
   top: 0;
@@ -267,9 +262,9 @@ button {
   display: flex;
   flex-direction: row-reverse;
   background-color: black;
-  padding: 1rem;
-  gap: 1rem;
   margin: auto;
+  gap: 1rem;
+  padding: 1rem;
 }
 .ModaImgCommentsContainer.mobile {
   display: grid;
@@ -312,9 +307,43 @@ button {
   margin: auto;
 }
 .ModalImg {
-  max-width: 90vw;
+  width: 100%;
   max-height: 80vh;
-  object-fit: cover;
+}
+
+.LogInContainer {
+  display: flex;
+  flex-direction: column;
+  min-width: 60%;
+
+  gap: 1rem;
+  margin: 2rem;
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgb(119, 117, 117);
+}
+.LabelInputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.LogSignButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+.MyProfileContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  margin: 0rem 0rem;
+}
+.userName.profile {
+  font-weight: 800;
+  font-size: 2rem;
+}
+.userName:hover {
+  cursor: pointer;
 }
 
 @media (max-aspect-ratio: 16/10) {

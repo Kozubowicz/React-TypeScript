@@ -1,4 +1,5 @@
 import { useInstaContext } from "../Context/InstaContext";
+import { MyProfile } from "./MyProfile";
 
 type PostProps = {
   post: {
@@ -13,23 +14,17 @@ type PostProps = {
 };
 
 export function Post({ post }: PostProps) {
-  const { setUserId, setModalOn, setModalImg, setModalUser } = useInstaContext();
+  const { setModalOn, setModalImg, setModalUser } = useInstaContext();
   return (
     <>
       <div className="HomePost">
-        <div className="UserProfileName">
-          <>
-            <img
-              src={post.profileImg}
-              key={post.profileImg}
-              onClick={() => setUserId(post.userId)}
-              className="PostProfilePicture"
-            />
-            <div onClick={() => setUserId(post.userId)} className="PostUserName">
-              {post.userName}
-            </div>
-          </>
-        </div>
+        <MyProfile
+          profileImgSize={"30px"}
+          profileImgUrl={post.profileImg}
+          profileId={post.userId}
+          profileName={post.userName}
+          profile={false}
+        />
         <div className="PostImageContainer">
           <img
             src={post.imgUrl}
