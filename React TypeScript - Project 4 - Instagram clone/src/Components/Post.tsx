@@ -41,7 +41,7 @@ export function Post({ post }: PostProps) {
           />
         </div>
         <label className="PostDescriptionContainer">
-          <label className="PostDescription"> {post.description}</label>
+          <label className="PostDescription">{post.description}</label>
         </label>
       </div>
     </>

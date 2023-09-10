@@ -17,10 +17,6 @@ export function Profile() {
           <div className="ProfileAbout">
             <div className="ProfileImgName">
               <div className="ProfileNameReaction">
-                {/*<div className="ProfilePicture">
-                  <img src={userProfile.profileImg} style={{ width: "65px" }} />
-                </div>
-      <label className="ProfileName">{userProfile.userName}</label>*/}
                 <MyProfile
                   profileImgSize={"90px"}
                   profileImgUrl={userProfile.profileImg}

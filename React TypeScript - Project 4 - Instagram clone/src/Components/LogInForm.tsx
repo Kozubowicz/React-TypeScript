@@ -18,7 +18,7 @@ export function LogInForm() {
     <>
       <div className="LogInContainer">
         <div className="LabelInputContainer">
-          E-mail:{" "}
+          E-mail:
           <input type="email" ref={email} className={`inputBar ${DarkMode ? "dark" : ""}`} />
         </div>
         <div className="LabelInputContainer">

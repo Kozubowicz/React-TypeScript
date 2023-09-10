@@ -10,6 +10,10 @@ type MyProfile = {
   profileImg: string;
   description: string;
 };
+type getPostsType = {
+  posts: PostType[];
+  pagesNumber: number;
+};
 type PostType = {
   _id: string;
   userId: string;
@@ -73,7 +77,7 @@ type InstaContext = {
   userProfile: UserProfile;
   getUserProfile: (_id: string) => Promise<void>;
 
-  getPosts: () => Promise<PostType[]>;
+  getPosts: (page: number) => Promise<getPostsType>;
 
   serachUser: (userName: string) => Promise<void>;
 
@@ -177,17 +181,21 @@ export function InstaContextProvider({ children }: InstaContextProvider) {
     }
   }
 
-  async function getPosts(): Promise<PostType[]> {
+  async function getPosts(page: number): Promise<getPostsType> {
     try {
       const response = await fetch(
-        "https://us-east-1.aws.data.mongodb-api.com/app/instacloneapi-phjfx/endpoint/getPosts"
+        `https://us-east-1.aws.data.mongodb-api.com/app/instacloneapi-phjfx/endpoint/getPosts?page=${page}`
       );
       if (!response.ok) {
         throw new Error();
       }
       const jsonData = await response.json();
+      console.log(jsonData);
 
-      return jsonData;
+      return {
+        posts: jsonData.posts,
+        pagesNumber: jsonData.pagesNumber,
+      };
     } catch (error) {
       console.error("Error");
       throw error;

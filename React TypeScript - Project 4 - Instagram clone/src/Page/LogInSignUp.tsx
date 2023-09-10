@@ -16,7 +16,7 @@ export function LogInSignUp({ setLogSign }: LogInSignUpProps) {
   }, [tokenId]);
 
   return (
-    <div style={{ margin: "auto" }}>
+    <div style={{ margin: "auto", maxWidth: "90vw" }}>
       <div className="LogInContainer">
         <button onClick={() => setLogOrSign(!LogOrSign)}>
           {LogOrSign ? <>Sign Up</> : <>Log In</>}

@@ -141,6 +141,7 @@ button {
   display: flex;
   flex-direction: column;
   margin: auto;
+  padding-bottom: 200px;
 }
 .HomePost {
   margin: 1rem 0rem;
@@ -151,6 +152,13 @@ button {
   padding: 0.5rem;
   border-bottom: 1px solid rgb(119, 117, 117);
 }
+.PagesNumbers {
+  font-weight: bold;
+  display: flex;
+  gap: 1rem;
+  text-decoration: underline;
+  margin: auto;
+}
 
 .PostImageContainer {
   display: flex;
@@ -159,7 +167,10 @@ button {
 .PostImageContainer img {
   max-width: 100%;
 }
-
+.PostDescriptionContainer {
+  text-align: center;
+  padding: 1rem;
+}
 .PostDescription {
   font-size: small;
 }
@@ -315,7 +326,6 @@ button {
   display: flex;
   flex-direction: column;
   min-width: 60%;
-
   gap: 1rem;
   margin: 2rem;
   padding: 1rem;

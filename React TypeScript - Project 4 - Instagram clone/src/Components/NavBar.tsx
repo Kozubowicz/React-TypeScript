@@ -1,8 +1,10 @@
 import { useInstaContext } from "../Context/InstaContext";
 import { MyProfile } from "./MyProfile";
 import Logo from "/Logo.png";
-
-export function NavBar() {
+type NavBarProps = {
+  setLogSign: (e: boolean) => void;
+};
+export function NavBar({ setLogSign }: NavBarProps) {
   const {
     LightDarkModeChanger,
     DarkMode,
@@ -29,7 +31,12 @@ export function NavBar() {
             />
           </div>
 
-          <div className="TitleLogoContainer" onClick={() => setUserId("")}>
+          <div
+            className="TitleLogoContainer"
+            onClick={() => {
+              setUserId(""), setLogSign(false);
+            }}
+          >
             <label className="InstaTitle">Insta App</label>
             <img src={Logo} width={40} />
           </div>

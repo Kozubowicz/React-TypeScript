@@ -16,7 +16,7 @@ function App() {
     <>
       <div className="AppContainer">
         {modalOn && <Modal />}
-        {(aspectRatio > 0.9 || showNavBar) && <NavBar />}
+        {(aspectRatio > 0.9 || showNavBar) && <NavBar setLogSign={setLogSign} />}
         {modalOn === false && aspectRatio <= 0.9 && (
           <NavBarMini LogSign={LogSign} setLogSign={setLogSign} />
         )}
