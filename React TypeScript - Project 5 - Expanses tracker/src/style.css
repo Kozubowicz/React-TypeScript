@@ -1,0 +1,131 @@
+body {
+  color: rgb(255, 255, 255);
+  background-color: black;
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+}
+.NavBar {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  color: rgb(4, 233, 34);
+  padding: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0px 10px 20px rgba(0, 255, 0, 0.6);
+}
+.MainPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 1rem;
+}
+.FirstPeriod {
+  font-size: 2.4rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  font-weight: bold;
+}
+.Period {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+}
+.PeriodButtonsContainer {
+  display: flex;
+  gap: 0.5rem;
+}
+.PeriodProperties {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.Error {
+  color: red;
+}
+select {
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: white;
+  border-radius: 2rem;
+  width: 30vw;
+}
+
+option {
+  background-color: black;
+}
+button {
+  font-size: 1rem;
+  border-radius: 3rem;
+  padding: 0.2rem 0.9rem;
+  color: white;
+  background-color: transparent;
+  border-color: rgb(9, 243, 126);
+}
+
+input {
+  font-size: 1rem;
+  width: 35vw;
+  color: white;
+  background-color: transparent;
+}
+.ExpansesInput {
+  border: none;
+  border-bottom: 2px solid silver;
+}
+.removeButton {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.4rem;
+  color: red;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+table {
+  border-collapse: collapse;
+}
+thead {
+  border-bottom: 2px solid rgb(0, 255, 0);
+}
+th {
+  border-bottom: 1px solid silver;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.TBudget {
+  background-color: rgba(0, 255, 0, 0.6);
+  width: 20vw;
+}
+.TSpent {
+  background-color: rgba(255, 0, 0, 0.6);
+  width: 50%;
+}
+
+@media (orientation: landscape) {
+  select {
+    width: 15%;
+  }
+  input {
+    width: 40%;
+  }
+  .ExpansesTable {
+    width: 30vw;
+  }
+}
+
+@media (orientation: portrait) {
+  select {
+    width: 40%;
+  }
+  .ExpansesTable {
+    width: 90vw;
+  }
+}
