@@ -5,7 +5,6 @@ import { useExpansesContext } from "../Context/Context";
 
 export function MainPage() {
   const { getPeriods } = useExpansesContext();
-  console.log(getPeriods()?.length);
 
   return (
     <>

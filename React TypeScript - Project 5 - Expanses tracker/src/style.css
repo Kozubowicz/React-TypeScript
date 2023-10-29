@@ -76,6 +76,9 @@ input {
   color: white;
   background-color: transparent;
 }
+.PeriodPropertiesInput {
+  width: auto;
+}
 .ExpansesInput {
   border: none;
   border-bottom: 2px solid silver;
@@ -116,6 +119,7 @@ th {
   input {
     width: 40%;
   }
+
   .ExpansesTable {
     width: 30vw;
   }

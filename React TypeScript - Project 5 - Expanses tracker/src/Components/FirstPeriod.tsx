@@ -21,8 +21,18 @@ export function FirstPeriod() {
         <div className="Title"> Create First Period</div>
         <div className="Period">
           <div className="PeriodProperties">
-            <input type="text" ref={PeriodName} placeholder="Period Name" />
-            <input type="number" ref={PeriodBudget} placeholder="Period budget" />
+            <input
+              className="PeriodPropertiesInput"
+              type="text"
+              ref={PeriodName}
+              placeholder="Period Name"
+            />
+            <input
+              className="PeriodPropertiesInput"
+              type="number"
+              ref={PeriodBudget}
+              placeholder="Period budget"
+            />
           </div>
           <button onClick={handleCreate}>Create</button>
         </div>
