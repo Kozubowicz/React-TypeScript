@@ -39,6 +39,8 @@ type ExpanseContext = {
   AddExpanse: (Name: string, Value: number) => Promise<void>;
   RemoveExpanse: (Id: number) => Promise<void>;
   period: Period | undefined;
+  CurrentPage: string;
+  setCurrentPage: (name: string) => void;
 };
 
 const ExpanseContext = createContext({} as ExpanseContext);
@@ -55,6 +57,7 @@ export function ExpanseContextProvider({ children }: ExpanseContextProvider) {
   const [periodsList, setPeriodsList] = useState<PeriodsList[]>([]);
   const [selectedPeriod, setSelectedPeriod] = useState<string>("");
   const [period, setPeriod] = useState<Period | undefined>();
+  const [CurrentPage, setCurrentPage] = useState<string>("home");
 
   async function LogIn(mail: string, password: string): Promise<void> {
     try {
@@ -114,6 +117,7 @@ export function ExpanseContextProvider({ children }: ExpanseContextProvider) {
         console.error("Error");
         throw new Error();
       }
+      setPeriod(undefined);
       setAction(!action);
     } catch (error) {
       console.error("Error");
@@ -229,6 +233,8 @@ export function ExpanseContextProvider({ children }: ExpanseContextProvider) {
           AddExpanse,
           RemoveExpanse,
           period,
+          CurrentPage,
+          setCurrentPage,
         }}
       >
         {children}

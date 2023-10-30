@@ -38,7 +38,7 @@ export function Period() {
             <button onClick={RemovePeriod}>Remove</button>
           </div>
         </div>
-        {period && period.Budget && (
+        {period && period.Budget ? (
           <table className="BudgetSummaryTable">
             <tbody>
               <tr>
@@ -47,8 +47,14 @@ export function Period() {
                   {period.Expanses.reduce((sum, e) => sum + e.Value, 0).toFixed(2)}
                 </th>
               </tr>
+              <tr>
+                <th className="SummaryDes">Budget</th>
+                <th className="SummaryDes">Expenses</th>
+              </tr>
             </tbody>
           </table>
+        ) : (
+          <h3>Please create first period by clicking "New" button</h3>
         )}
       </div>
     </>

@@ -1,6 +1,5 @@
 import { useRef, useState, useEffect } from "react";
 
-import { useNavigate } from "react-router-dom";
 import { useExpanseContext } from "../Context/Context";
 
 export function LogIn() {
@@ -9,8 +8,7 @@ export function LogIn() {
   const [errorEmail, setErrorEmail] = useState<boolean>(false);
   const [errorPassword, setErrorPassword] = useState<boolean>(false);
 
-  const navigate = useNavigate();
-  const { LogIn, sucess, setSucess } = useExpanseContext();
+  const { LogIn, sucess, setSucess, setCurrentPage } = useExpanseContext();
 
   const handleLogIn = () => {
     if (checkEmail(mail.current?.value) && mail.current) {
@@ -36,7 +34,7 @@ export function LogIn() {
 
   useEffect(() => {
     if (sucess) {
-      navigate("/");
+      setCurrentPage("home");
       setSucess(undefined);
     }
   }, [sucess]);
@@ -44,12 +42,16 @@ export function LogIn() {
   return (
     <>
       <div className="PrimalContainer">
+        <h3>
+          If you don't have an account yet, please click the "Sign Up" button on the navbar to
+          register
+        </h3>
         <div className="SecondaryContainer">
           <input type="text" placeholder="e-mail" ref={mail} />
           <input type="password" placeholder="password" ref={password} />
-
-          <button onClick={handleLogIn}>Log In</button>
-
+          <div>
+            <button onClick={handleLogIn}>Log In</button>
+          </div>
           {errorEmail && <div className="Error">Incorrect e-mail format</div>}
           {errorPassword && <div className="Error">To short password</div>}
           {sucess === false && <div className="Error">Server error</div>}

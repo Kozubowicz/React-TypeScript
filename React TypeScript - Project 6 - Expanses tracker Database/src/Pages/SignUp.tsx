@@ -19,7 +19,6 @@ export function SignUp() {
       ) {
         setErrorPassword(false);
         SignUp(mail.current.value, password.current.value);
-        //Przesłanie danych na serwer
       } else {
         setErrorPassword(true);
       }
@@ -41,13 +40,17 @@ export function SignUp() {
   return (
     <>
       <div className="PrimalContainer">
+        <h3>
+          If you already have an account , please click the "Logn In" button on the navbar to log in
+        </h3>
+
         <div className="SecondaryContainer">
           <input type="text" placeholder="e-mail" ref={mail} />
           <input type="password" placeholder="password" ref={password} />
           <input type="password" placeholder="repeat password" ref={password2} />
-
-          <button onClick={handleLogIn}>Sign Up</button>
-
+          <div>
+            <button onClick={handleLogIn}>Sign Up</button>
+          </div>
           {errorEmail && <div className="Error">Incorrect e-mail format</div>}
           {errorPassword && <div className="Error">Incorrect password</div>}
           {sucess && <div className="Success">Successful registration</div>}

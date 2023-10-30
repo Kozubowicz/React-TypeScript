@@ -19,6 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   padding: 3rem 1rem 1rem 1rem;
 }
 .SecondaryContainer {
@@ -70,6 +71,12 @@ body {
   background-color: rgba(255, 0, 0, 0.6);
   width: 50%;
 }
+.SummaryDes {
+  font-size: 0.8rem;
+  font-weight: lighter;
+  font-style: italic;
+  padding: 0.2rem;
+}
 
 .HistoryContainer {
   display: flex;
@@ -105,13 +112,15 @@ input {
   font-size: 1rem;
   color: white;
   background-color: transparent;
+  border: none;
+  border-bottom: 2px solid silver;
 }
 select {
   font-size: 1rem;
   padding: 0.5rem;
   background-color: transparent;
   color: white;
-  border-radius: 2rem;
+  border-radius: 1rem;
 }
 option {
   background-color: black;
@@ -119,12 +128,15 @@ option {
 button {
   font-size: 1rem;
   border-radius: 3rem;
-  padding: 0.2rem 0.9rem;
+  padding: 0.3rem 0.9rem;
   color: white;
   background-color: transparent;
   border-color: rgb(9, 243, 126);
 }
 
+h3 {
+  padding-bottom: 2rem;
+}
 table {
   border-collapse: collapse;
 }
@@ -145,6 +157,9 @@ th {
     width: 90vw;
   }
   input {
+    width: 70vw;
+  }
+  .ExpanseInput {
     width: 30vw;
   }
 }
@@ -152,5 +167,8 @@ th {
 @media (orientation: landscape) {
   th {
     padding: 0.5rem 3rem;
+  }
+  select {
+    width: 20vw;
   }
 }

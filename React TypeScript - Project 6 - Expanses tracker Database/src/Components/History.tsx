@@ -21,8 +21,8 @@ export function History() {
       <div className="HistoryContainer">
         <div className="NewExpanseContainer">
           <div className="InputsContainer">
-            <input placeholder="Name" ref={ExpanseName} />
-            <input placeholder="Value" ref={ExpanseValue} />
+            <input placeholder="Name" ref={ExpanseName} className="ExpanseInput" />
+            <input placeholder="Value" ref={ExpanseValue} className="ExpanseInput" />
           </div>
           <div className="ButtonContainer">
             <button onClick={HandleAddExpanse}>Add</button>

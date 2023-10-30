@@ -1,14 +1,11 @@
-import { useLocation, useNavigate } from "react-router-dom";
 import { useExpanseContext } from "../Context/Context";
 
 export function NavBar() {
-  const { tokenId, setTokenId } = useExpanseContext();
-  const location = useLocation();
-  const navigate = useNavigate();
+  const { tokenId, setTokenId, setCurrentPage, CurrentPage } = useExpanseContext();
 
   const handleSignOut = () => {
     setTokenId("");
-    navigate("/");
+    setCurrentPage("home");
   };
 
   return (
@@ -21,14 +18,14 @@ export function NavBar() {
           </>
         ) : (
           <>
-            {location.pathname === "/" && (
-              <button onClick={() => navigate("/login")}>Sign In</button>
+            {CurrentPage === "home" && (
+              <button onClick={() => setCurrentPage("login")}>Sign In</button>
             )}
-            {location.pathname === "/signup" && (
-              <button onClick={() => navigate("/login")}>Log In</button>
+            {CurrentPage === "signup" && (
+              <button onClick={() => setCurrentPage("login")}>Log In</button>
             )}
-            {location.pathname === "/login" && (
-              <button onClick={() => navigate("/signup")}>Sign Up</button>
+            {CurrentPage === "login" && (
+              <button onClick={() => setCurrentPage("signup")}>Sign Up</button>
             )}
           </>
         )}
