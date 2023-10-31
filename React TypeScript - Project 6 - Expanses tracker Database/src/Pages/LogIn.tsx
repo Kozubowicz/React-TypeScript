@@ -47,6 +47,7 @@ export function LogIn() {
           register
         </h3>
         <div className="SecondaryContainer">
+          <h2>Log In</h2>
           <input type="text" placeholder="e-mail" ref={mail} />
           <input type="password" placeholder="password" ref={password} />
           <div>

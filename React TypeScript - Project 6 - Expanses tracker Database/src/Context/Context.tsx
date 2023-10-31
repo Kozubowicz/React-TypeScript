@@ -41,6 +41,9 @@ type ExpanseContext = {
   period: Period | undefined;
   CurrentPage: string;
   setCurrentPage: (name: string) => void;
+  ChangePassword: (oldPassword: string, newPassword: string) => Promise<void>;
+  openMenu: boolean;
+  setOpenMenu: (e: boolean) => void;
 };
 
 const ExpanseContext = createContext({} as ExpanseContext);
@@ -58,6 +61,7 @@ export function ExpanseContextProvider({ children }: ExpanseContextProvider) {
   const [selectedPeriod, setSelectedPeriod] = useState<string>("");
   const [period, setPeriod] = useState<Period | undefined>();
   const [CurrentPage, setCurrentPage] = useState<string>("home");
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
 
   async function LogIn(mail: string, password: string): Promise<void> {
     try {
@@ -81,6 +85,22 @@ export function ExpanseContextProvider({ children }: ExpanseContextProvider) {
     try {
       const response = await fetch(
         `https://us-east-1.aws.data.mongodb-api.com/app/expansetracker-api-nqhen/endpoint/SignUp?mail=${mail}&password=${password}`
+      );
+      if (!response.ok) {
+        setSucess(false);
+        throw new Error();
+      }
+      setSucess(true);
+    } catch (error) {
+      console.error("Error");
+      throw error;
+    }
+  }
+
+  async function ChangePassword(oldPassword: string, newPassword: string): Promise<void> {
+    try {
+      const response = await fetch(
+        `https://us-east-1.aws.data.mongodb-api.com/app/expansetracker-api-nqhen/endpoint/ChangePassword?userid=${tokenId}&oldpassword=${oldPassword}&newpassword=${newPassword}`
       );
       if (!response.ok) {
         setSucess(false);
@@ -235,6 +255,9 @@ export function ExpanseContextProvider({ children }: ExpanseContextProvider) {
           period,
           CurrentPage,
           setCurrentPage,
+          ChangePassword,
+          openMenu,
+          setOpenMenu,
         }}
       >
         {children}

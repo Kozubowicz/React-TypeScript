@@ -1,11 +1,20 @@
 import { useExpanseContext } from "../Context/Context";
 
 export function NavBar() {
-  const { tokenId, setTokenId, setCurrentPage, CurrentPage } = useExpanseContext();
+  const { tokenId, setTokenId, CurrentPage, setCurrentPage, setSucess, openMenu, setOpenMenu } =
+    useExpanseContext();
 
+  const handleChangePassword = () => {
+    handleMenu();
+    setCurrentPage("change");
+  };
   const handleSignOut = () => {
+    handleMenu();
     setTokenId("");
     setCurrentPage("home");
+  };
+  const handleMenu = () => {
+    setOpenMenu(!openMenu);
   };
 
   return (
@@ -13,19 +22,48 @@ export function NavBar() {
       <div className="NavBar">
         <div className="NavTitle">Expanses tracker</div>
         {tokenId && tokenId.length > 5 ? (
-          <>
-            <button onClick={handleSignOut}>Sign Out</button>
-          </>
+          <div className="ButtonNavContainer">
+            <button onClick={handleMenu}>☰</button>
+            {openMenu && (
+              <div className="MenuContainer">
+                <ul>
+                  <li onClick={handleChangePassword}>Change Password</li>
+                  <li onClick={handleSignOut}>Sign Out</li>
+                </ul>
+              </div>
+            )}
+          </div>
         ) : (
           <>
             {CurrentPage === "home" && (
-              <button onClick={() => setCurrentPage("login")}>Sign In</button>
+              <button
+                onClick={() => {
+                  setCurrentPage("login");
+                  setSucess(undefined);
+                }}
+              >
+                Sign In
+              </button>
             )}
             {CurrentPage === "signup" && (
-              <button onClick={() => setCurrentPage("login")}>Log In</button>
+              <button
+                onClick={() => {
+                  setCurrentPage("login");
+                  setSucess(undefined);
+                }}
+              >
+                Log In
+              </button>
             )}
             {CurrentPage === "login" && (
-              <button onClick={() => setCurrentPage("signup")}>Sign Up</button>
+              <button
+                onClick={() => {
+                  setCurrentPage("signup");
+                  setSucess(undefined);
+                }}
+              >
+                Sign Up
+              </button>
             )}
           </>
         )}

@@ -54,7 +54,7 @@ export function Period() {
             </tbody>
           </table>
         ) : (
-          <h3>Please create first period by clicking "New" button</h3>
+          <h3>Please create the first period by clicking the ‘New’ button</h3>
         )}
       </div>
     </>
