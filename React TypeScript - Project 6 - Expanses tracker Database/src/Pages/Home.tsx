@@ -14,7 +14,7 @@ export function Home() {
             {selectedPeriod && <History />}
           </>
         ) : (
-          <h3>ello, please log in or register by clicking the ‘Sign In’ button on the navbar</h3>
+          <h3>Hello, please log in or register by clicking the ‘Sign In’ button on the navbar</h3>
         )}
       </div>
     </>

@@ -1,0 +1,31 @@
+.Word {
+  &--container {
+    position: relative;
+    top: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  &--box {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    font-size: 4rem;
+    &-floor {
+      width: 75px;
+      height: 10px;
+      background: black;
+    }
+    &-letter {
+      &-hidden {
+        visibility: hidden;
+      }
+      &-not {
+        color: red;
+      }
+    }
+  }
+}

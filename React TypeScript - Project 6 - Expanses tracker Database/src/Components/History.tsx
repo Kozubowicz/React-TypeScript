@@ -6,7 +6,9 @@ export function History() {
   const ExpanseName = useRef<HTMLInputElement>(null);
   const ExpanseValue = useRef<HTMLInputElement>(null);
 
-  const HandleAddExpanse = () => {
+  const HandleAddExpanse = (event: React.FormEvent) => {
+    event.preventDefault();
+
     if (ExpanseName && ExpanseName.current && ExpanseName.current?.value.length > 0) {
       if (ExpanseValue && ExpanseValue.current && parseFloat(ExpanseValue.current.value) > 0) {
         AddExpanse(ExpanseName.current.value, parseFloat(ExpanseValue.current.value));
@@ -20,13 +22,24 @@ export function History() {
     <>
       <div className="HistoryContainer">
         <div className="NewExpanseContainer">
-          <div className="InputsContainer">
-            <input placeholder="Name" ref={ExpanseName} className="ExpanseInput" />
-            <input placeholder="Value" ref={ExpanseValue} className="ExpanseInput" />
-          </div>
-          <div className="ButtonContainer">
-            <button onClick={HandleAddExpanse}>Add</button>
-          </div>
+          <form onSubmit={HandleAddExpanse}  className="FormContainer">
+            <input type="text"
+              placeholder="Name" 
+              ref={ExpanseName}
+              className="ExpanseInput"
+              required
+            />
+
+            <input type="text" 
+              pattern="[0-9]*[.]?[0-9]*" 
+              inputMode="decimal"
+              placeholder="Value"
+              ref={ExpanseValue} 
+              className="ExpanseInput"
+              required
+            />
+            <button>Add</button>
+          </form>
         </div>
         <div className="TableContainer">
           <table>
@@ -35,7 +48,7 @@ export function History() {
                 <th>Name</th>
                 <th>PLN</th>
                 <th>Date</th>
-                <th>---</th>
+                <th>{' '}</th>
               </tr>
             </thead>
             {period && period.Expanses && (

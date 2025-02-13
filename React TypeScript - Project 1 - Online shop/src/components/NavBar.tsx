@@ -3,7 +3,7 @@ import Logo from "./Logo.png";
 import { NavLink } from "react-router-dom";
 
 export function NavBar() {
-  const base = "/Projects/Project 25 - React TypeScript - Project 1 - Online shop/";
+  const base = "/Projects/Project 10 - React TypeScript - Project 1 - Online shop/";
   const { openCart, cartQuantity } = useShoppingCart();
   return (
     <>
@@ -15,7 +15,7 @@ export function NavBar() {
             </a>
             <h3 className="NavTile">Online shop</h3>
           </div>
-          <h3>Project XIV</h3>
+          <h3>Project X</h3>
         </div>
         <div className="navContainer">
           <div>

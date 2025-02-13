@@ -27,7 +27,18 @@ export function NavBar() {
             {openMenu && (
               <div className="MenuContainer">
                 <ul>
-                  <li onClick={handleChangePassword}>Change Password</li>
+                  {CurrentPage === "home" ? (
+                    <li onClick={handleChangePassword}>Change Password</li>
+                  ) : (
+                    <li
+                      onClick={() => {
+                        setCurrentPage("home");
+                        setOpenMenu(!openMenu);
+                      }}
+                    >
+                      Home
+                    </li>
+                  )}
                   <li onClick={handleSignOut}>Sign Out</li>
                 </ul>
               </div>

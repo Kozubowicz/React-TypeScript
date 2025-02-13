@@ -46,10 +46,10 @@ export function SignUp() {
 
         <div className="SecondaryContainer">
           <h2>Register</h2>
-          <input type="text" placeholder="e-mail" ref={mail} />
+          <input type="email" placeholder="e-mail" ref={mail} />
           <input type="password" placeholder="password" ref={password} />
           <input type="password" placeholder="repeat password" ref={password2} />
-          <div>
+          <div className="ButtonContainer">
             <button onClick={handleLogIn}>Sign Up</button>
           </div>
           {errorEmail && <div className="Error">Incorrect e-mail format</div>}

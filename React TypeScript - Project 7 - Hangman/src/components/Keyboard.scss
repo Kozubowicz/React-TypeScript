@@ -1,0 +1,36 @@
+.Keyboard {
+  &--container {
+    position: relative;
+    top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+  }
+  &--key {
+    background: transparent;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    transition: background-color 0.2s ease;
+
+    &-default {
+      &:hover {
+        cursor: pointer;
+        background: rgb(182, 180, 180);
+      }
+    }
+    &-right {
+      background: greenyellow;
+    }
+    &-wrong {
+      background: red;
+    }
+
+    &:disabled {
+      &:hover {
+        cursor: not-allowed;
+      }
+    }
+  }
+}

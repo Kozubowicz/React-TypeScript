@@ -48,9 +48,9 @@ export function LogIn() {
         </h3>
         <div className="SecondaryContainer">
           <h2>Log In</h2>
-          <input type="text" placeholder="e-mail" ref={mail} />
+          <input type="email" placeholder="e-mail" ref={mail} />
           <input type="password" placeholder="password" ref={password} />
-          <div>
+          <div className="ButtonContainer">
             <button onClick={handleLogIn}>Log In</button>
           </div>
           {errorEmail && <div className="Error">Incorrect e-mail format</div>}

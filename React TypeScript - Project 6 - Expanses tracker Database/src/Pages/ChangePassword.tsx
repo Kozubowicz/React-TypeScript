@@ -38,7 +38,7 @@ export function ChangePassword() {
           <input type="password" placeholder="Old Password" ref={oldPassword} />
           <input type="password" placeholder="New Password" ref={password} />
           <input type="password" placeholder="Repeat New password" ref={password2} />
-          <div className="InputsContainer">
+          <div className="ButtonContainer">
             <button
               onClick={() => {
                 setSucess(undefined), setCurrentPage("home");

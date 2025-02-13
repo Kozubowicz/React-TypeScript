@@ -6,7 +6,7 @@ import { NavBar } from "./components/NavBar";
 import { ShoppingCartProvider } from "./context/shoppingCartContext";
 
 function App() {
-  const base = "/Projects/Project 25 - React TypeScript - Project 1 - Online shop/";
+  const base = "/Projects/Project 10 - React TypeScript - Project 1 - Online shop/";
 
   return (
     <ShoppingCartProvider>
