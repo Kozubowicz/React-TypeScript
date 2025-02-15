@@ -1,0 +1,93 @@
+.AboutMe {
+  display: flex;
+  border: 2px solid silver;
+  border-radius: 50px;
+  box-shadow: 0 0 100px rgba(0, 224, 176, 0.979);
+  margin: 0 15vw;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+
+  &-left {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    padding: 2vh 2vw;
+    box-sizing: border-box;
+    border-right: 2px solid silver;
+    justify-content: center;
+  }
+
+  &-right {
+    width: 70%;
+    padding: 5vh 2vw;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    &--name {
+      font-size: 95px;
+    }
+    &--position {
+      font-size: 30px;
+      font-style: italic;
+    }
+    &--descrition {
+      font-size: 20px;
+      text-align: justify;
+    }
+    &--languages {
+      font-size: 35px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      &-item {
+        margin-left: 25px;
+        font-size: 25px;
+      }
+    }
+  }
+
+  &-img {
+    width: 100%;
+    overflow: hidden;
+    border: 2px solid silver;
+    border-radius: 50%;
+    animation: rotateAnimation 8s linear infinite;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-skills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    &-item {
+      display: flex;
+      padding: 5px 30px;
+      align-items: center;
+      gap: 20px;
+      border: 2px solid silver;
+      border-radius: 20px;
+      &--img {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        & img {
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}

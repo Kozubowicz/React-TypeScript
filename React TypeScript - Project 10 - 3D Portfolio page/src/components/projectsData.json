@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1001,
+    "name": "Weather Api",
+    "technologies": ["HTML", "CSS", "SCSS", "JavaScript", "API"],
+    "demo": "https://kozubowicz-portfolio.onrender.com/Projects/Project%201%20-%20HTML%20CSS%20JS%20-%20Weather%20Api/",
+    "code": "https://github.com/Kozubowicz/Projects-JavaScript/tree/main/Project%203%20Weather%20rest%20api"
+  },
+  {
+    "id": 1002,
+    "name": "Multi grid layout",
+    "technologies": ["HTML", "CSS", "SCSS", "JavaScript"],
+    "demo": "https://kozubowicz-portfolio.onrender.com/Projects/Project%205%20-%20HTML%20CSS%20JS%20-%20Multi%20grid%20layout/",
+    "code": "https://github.com/Kozubowicz/Projects-JavaScript/tree/main/Project%2012%20Multi%20grid%20layout"
+  },
+  {
+    "id": 1003,
+    "name": "2048",
+    "technologies": ["HTML", "CSS", "SCSS", "JavaScript"],
+    "demo": "https://kozubowicz-portfolio.onrender.com/Projects/Project%2016%20-%20HTML%20CSS%20JS%20-%202048/",
+    "code": "https://github.com/Kozubowicz/Projects-JavaScript/tree/main/Project%2013%202048"
+  },
+  {
+    "id": 1004,
+    "name": "Express Js Portfolio",
+    "technologies": ["HTML", "CSS", "ExpressJs", "JavaScript"],
+    "demo": "https://kozubowicz-portfolio.onrender.com",
+    "code": "https://github.com/Kozubowicz/Kozubowicz-Portfolio"
+  },
+  {
+    "id": 1005,
+    "name": "Note app",
+    "technologies": ["HTML", "CSS", "React", "JavaScript", "TypeScript"],
+    "demo": "https://kozubowicz-portfolio.onrender.com/Projects/Project%2011%20-%20React%20TypeScript%20-%20Project%202%20-%20Note%20app/",
+    "code": "https://github.com/Kozubowicz/React-TypeScript/tree/main/React%20TypeScript%20-%20Project%202%20-%20Note%20app"
+  },
+  {
+    "id": 1006,
+    "name": "Expanses tracker Database",
+    "technologies": [
+      "HTML",
+      "CSS",
+      "React",
+      "JavaScript",
+      "TypeScript",
+      "MongoDB",
+      "API"
+    ],
+    "demo": "https://kozubowicz-portfolio.onrender.com/Projects/Project%2014%20-%20React%20TypeScript%20-%20Project%205%20-%20Expanses%20tracker%20Database/",
+    "code": "https://github.com/Kozubowicz/React-TypeScript/tree/main/React%20TypeScript%20-%20Project%206%20-%20Expanses%20tracker%20Database"
+  },
+  {
+    "id": 1007,
+    "name": "Online shop Catalog ver1",
+    "technologies": ["HTML", "SCSS", "React", "JavaScript", "TypeScript"],
+    "demo": "https://kozubowicz-portfolio.onrender.com/Projects/Project%2015%20-%20React%20TypeScript%20-%20Project%206%20-%20Online%20shop%20Catalog%20+%20Router/#/",
+    "code": "https://github.com/Kozubowicz/React-TypeScript/tree/main/React%20TypeScript%20-%20Project%208%20-%20Online%20Shop%20(Electronics)"
+  },
+  {
+    "id": 1008,
+    "name": "Online shop Catalog ver2 with DataBase",
+    "technologies": [
+      "HTML",
+      "SCSS",
+      "React",
+      "JavaScript",
+      "TypeScript",
+      "MongoDB",
+      "API"
+    ],
+    "demo": "https://kozubowicz-portfolio.onrender.com/Projects/Project%2017%20-%20React%20TypeScript%20-%20Project%207%20-%20Online%20shop%20+%20MongoDb%20database%20+%20Router/",
+    "code": ""
+  }
+]
