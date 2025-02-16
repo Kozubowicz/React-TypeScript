@@ -2,8 +2,8 @@
   display: flex;
   border: 2px solid silver;
   border-radius: 50px;
-  box-shadow: 0 0 100px rgba(0, 224, 176, 0.979);
-  margin: 0 15vw;
+  box-shadow: 0 0 100px rgb(0, 224, 176);
+  margin: 0 10vw;
   background-color: rgba($color: #000000, $alpha: 0.5);
 
   &-left {
@@ -15,6 +15,19 @@
     box-sizing: border-box;
     border-right: 2px solid silver;
     justify-content: center;
+
+    &--img {
+      width: 100%;
+      overflow: hidden;
+      border: 2px solid silver;
+      border-radius: 50%;
+      animation: rotateAnimation 8s linear infinite;
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
   }
 
   &-right {
@@ -24,7 +37,7 @@
     flex-direction: column;
     gap: 5vh;
     &--name {
-      font-size: 95px;
+      font-size: 6vw;
     }
     &--position {
       font-size: 30px;
@@ -42,42 +55,6 @@
       &-item {
         margin-left: 25px;
         font-size: 25px;
-      }
-    }
-  }
-
-  &-img {
-    width: 100%;
-    overflow: hidden;
-    border: 2px solid silver;
-    border-radius: 50%;
-    animation: rotateAnimation 8s linear infinite;
-    & img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  &-skills {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    &-item {
-      display: flex;
-      padding: 5px 30px;
-      align-items: center;
-      gap: 20px;
-      border: 2px solid silver;
-      border-radius: 20px;
-      &--img {
-        width: 30px;
-        height: 30px;
-        display: flex;
-        & img {
-          width: 100%;
-          object-fit: contain;
-        }
       }
     }
   }

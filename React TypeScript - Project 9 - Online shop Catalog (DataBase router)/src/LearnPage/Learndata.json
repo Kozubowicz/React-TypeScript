@@ -1,0 +1,160 @@
+[
+  {
+    "id": 1,
+    "name": "Protein Powder",
+    "description": "A dietary supplement rich in protein, commonly used for muscle growth, recovery, and overall nutrition.",
+    "types": [
+      "Whey Protein",
+      "Casein Protein",
+      "Plant-Based Protein",
+      "Egg White Protein",
+      "Collagen Protein"
+    ],
+    "benefits": [
+      "Supports muscle growth and repair",
+      "Aids in weight management",
+      "Improves recovery after workouts",
+      "Helps meet daily protein intake goals"
+    ],
+    "recommendedDosage": "Typically 20-30g per serving, depending on individual protein needs.",
+    "potentialSideEffects": [
+      "Digestive issues",
+      "Lactose intolerance",
+      "Possible allergies"
+    ],
+    "popularBrands": ["Optimum Nutrition", "Dymatize", "Garden of Life"],
+    "imgs": [
+      "https://imgur.com/HLmzU1H.png",
+      "https://imgur.com/QyTqU6U.png",
+      "https://imgur.com/nUavSzv.png",
+      "https://imgur.com/2t09Gr1.png",
+      "https://imgur.com/6HqZ3U5.png"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Creatine",
+    "description": "A naturally occurring compound that enhances strength, muscle mass, and exercise performance by increasing ATP production.",
+    "types": [
+      "Creatine Monohydrate",
+      "Creatine HCL",
+      "Buffered Creatine",
+      "Micronized Creatine"
+    ],
+    "benefits": [
+      "Increases strength and power",
+      "Enhances muscle growth",
+      "Improves exercise performance",
+      "Supports brain function"
+    ],
+    "recommendedDosage": "3-5g daily, with an optional 20g loading phase for the first 5-7 days.",
+    "potentialSideEffects": [
+      "Water retention",
+      "Mild stomach discomfort",
+      "Possible kidney concerns in those with pre-existing conditions"
+    ],
+    "popularBrands": ["Bulk Supplements", "MuscleTech", "Transparent Labs"],
+    "imgs": [
+      "https://imgur.com/yX4jEtK.png",
+      "https://imgur.com/Zqjm76y.png",
+      "https://imgur.com/WxYojGS.png",
+      "https://imgur.com/kCRbddx.png",
+      "https://imgur.com/nWpecPe.png"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Vitamins Pills",
+    "description": "A supplement that provides essential vitamins and minerals to support overall health and wellness.",
+    "types": [
+      "Multivitamins",
+      "Vitamin D",
+      "Vitamin C",
+      "B-Complex",
+      "Omega-3"
+    ],
+    "benefits": [
+      "Supports immune function",
+      "Improves energy levels",
+      "Enhances overall health",
+      "Prevents nutritional deficiencies"
+    ],
+    "recommendedDosage": "Varies by vitamin; typically 1-2 pills daily as per recommended daily intake.",
+    "potentialSideEffects": [
+      "Overdosing can cause toxicity",
+      "Nausea",
+      "Upset stomach"
+    ],
+    "popularBrands": ["Nature Made", "Centrum", "Garden of Life"],
+    "imgs": [
+      "https://imgur.com/RU6ClyF.png",
+      "https://imgur.com/SKv5TeX.png",
+      "https://imgur.com/bXhCKJm.png",
+      "https://imgur.com/L8kCm49.png",
+      "https://imgur.com/Fk6vwI3.png"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Caffeine",
+    "description": "A natural stimulant that boosts alertness, focus, and energy levels by stimulating the central nervous system.",
+    "types": [
+      "Caffeine Anhydrous",
+      "Natural Caffeine (from coffee or tea)",
+      "Caffeine Pills"
+    ],
+    "benefits": [
+      "Enhances mental alertness",
+      "Boosts energy levels",
+      "Improves endurance and performance",
+      "Aids in fat burning"
+    ],
+    "recommendedDosage": "100-200mg per dose, with a daily limit of 400mg for most adults.",
+    "potentialSideEffects": [
+      "Jitters",
+      "Increased heart rate",
+      "Insomnia",
+      "Dependency"
+    ],
+    "popularBrands": ["ProLab", "Nutricost", "Kaged Muscle"],
+    "imgs": [
+      "https://imgur.com/5hDjRhK.png",
+      "https://imgur.com/LB8mTmX.png",
+      "https://imgur.com/il7SuKL.png",
+      "https://imgur.com/Nhpce7h.png",
+      "https://imgur.com/KqJivXm.png"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Pre-Workout Supplements",
+    "description": "A supplement designed to enhance energy, focus, and endurance during workouts.",
+    "types": [
+      "Stimulant-Based",
+      "Stimulant-Free",
+      "Pump Enhancers",
+      "Nootropic-Based"
+    ],
+    "benefits": [
+      "Boosts energy and focus",
+      "Enhances endurance",
+      "Increases muscle pumps",
+      "Improves performance"
+    ],
+    "recommendedDosage": "1 scoop (150-300mg caffeine) taken 20-30 minutes before a workout.",
+    "potentialSideEffects": [
+      "Jitters",
+      "Increased heart rate",
+      "Digestive issues",
+      "Sleep disturbances"
+    ],
+    "popularBrands": ["C4", "Pre JYM", "Ghost", "Transparent Labs"],
+    "imgs": [
+      "https://imgur.com/3ESmZsv.png",
+      "https://imgur.com/vlqaBxj.png",
+      "https://imgur.com/YvVFPOY.png",
+      "https://imgur.com/jWaHoTv.png",
+      "https://imgur.com/6HqZ3U5.png"
+    ]
+  }
+]

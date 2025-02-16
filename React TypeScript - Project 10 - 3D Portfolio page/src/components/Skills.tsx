@@ -1,24 +1,24 @@
 import { SkillsItem } from './SkillsItem';
 
 const frontEndSkills = [
-  { id: 1, name: 'HTML', img: '/logos/HTML.png' },
-  { id: 2, name: 'CSS', img: '/logos/CSS.png' },
-  { id: 3, name: 'SCSS', img: '/logos/SCSS.png' },
-  { id: 4, name: 'JavaScript', img: '/logos/JavaScript.png' },
-  { id: 5, name: 'TypeScript', img: '/logos/TypeScript.png' },
-  { id: 6, name: 'React.js', img: '/logos/React.png' },
+  { id: 1, name: 'HTML', img: './logos/HTML.png' },
+  { id: 2, name: 'CSS', img: './logos/CSS.png' },
+  { id: 3, name: 'SCSS', img: './logos/SCSS.png' },
+  { id: 4, name: 'JavaScript', img: './logos/JavaScript.png' },
+  { id: 5, name: 'TypeScript', img: './logos/TypeScript.png' },
+  { id: 6, name: 'React.js', img: './logos/React.png' },
 ];
 
 const backEndSkills = [
-  { id: 7, name: 'REST API', img: '/logos/API.png' },
-  { id: 8, name: 'Node.js', img: '/logos/NodeJs.png' },
-  { id: 9, name: 'MongoDB', img: '/logos/MongoDB.png' },
+  { id: 7, name: 'REST API', img: './logos/API.png' },
+  { id: 8, name: 'Node.js', img: './logos/NodeJs.png' },
+  { id: 9, name: 'MongoDB', img: './logos/MongoDB.png' },
 ];
 
 const otherSkills = [
-  { id: 10, name: 'GitHub', img: '/logos/GitHub.png' },
-  { id: 11, name: 'Git', img: '/logos/Git.png' },
-  { id: 12, name: 'VS Code', img: '/logos/visual.png' },
+  { id: 10, name: 'GitHub', img: './logos/GitHub.png' },
+  { id: 11, name: 'Git', img: './logos/Git.png' },
+  { id: 12, name: 'VS Code', img: './logos/visual.png' },
 ];
 
 const listedSkills = [
@@ -46,16 +46,13 @@ export function Skills() {
           <SkillsItem skillsType={'Back-end'} skills={backEndSkills} />
           <SkillsItem skillsType={'Other'} skills={otherSkills} />
         </div>
-        <div className='Skills-list'>
-          <div className='Skills-list--head'>Listed skill</div>
-          <ul className='Skills-list--list'>
-            {listedSkills.map((skill) => (
-              <li key={skill.id} className='Skills-list--list-item'>
-                {skill.body}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ul className='Skills-list'>
+          {listedSkills.map((skill) => (
+            <li key={skill.id} className='Skills-list-item'>
+              {skill.body}
+            </li>
+          ))}
+        </ul>
       </div>
     </>
   );

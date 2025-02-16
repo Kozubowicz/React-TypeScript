@@ -2,13 +2,13 @@
   width: 100%;
   background-color: rgba(#0000, 0.3);
   box-sizing: border-box;
-  padding: 5vh 5vw;
+  padding: 5vh 0;
   display: flex;
   flex-direction: column;
   gap: 5vh;
   align-items: center;
 
-  box-shadow: 0 0 100px rgba(0, 224, 176, 0.979);
+  box-shadow: 0 0 100px rgb(0, 224, 176);
 
   &-header {
     font-size: 75px;
@@ -16,7 +16,7 @@
   &-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 2vw;
+    gap: 2vh;
     justify-content: center;
 
     &-item {
@@ -26,7 +26,7 @@
       padding: 1vh 0;
       display: flex;
       flex-direction: column;
-      width: 450px;
+      max-width: 450px;
       transition: all 0.2s ease-in-out;
 
       &:hover {
@@ -43,7 +43,6 @@
         border-bottom: 2px solid silver;
       }
       &--technologies {
-        flex: 1;
         padding: 20px;
         display: flex;
         flex-wrap: wrap;

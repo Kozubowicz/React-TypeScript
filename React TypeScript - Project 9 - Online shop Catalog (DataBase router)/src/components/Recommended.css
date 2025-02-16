@@ -1,0 +1,22 @@
+.Recommended {
+  margin: 1vh 0;
+  padding: 1vh 2.5vw;
+  width: 75vw;
+  overflow: hidden;
+  position: relative;
+}
+.RecommendedHeader {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.RecommendedList {
+  display: flex;
+  gap: 5vw;
+  font-weight: bolder;
+  margin: 1vh 0;
+}
+
+.RecommendedList-Animation {
+  transition: transform 0.5s ease-in-out;
+}

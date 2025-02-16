@@ -1,0 +1,79 @@
+.LearnPage {
+  display: flex;
+  flex-direction: column;
+  padding: 20vh 10vw;
+  gap: 10vh;
+}
+
+.LearnPageItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 5vw;
+}
+
+.LearnPageItem-gallery {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.LearnPageItem-gallery-Top {
+  border: 2px solid silver;
+  width: 30vw;
+  height: 30vw;
+}
+.LearnPageItem-gallery-Top img {
+  height: 100%;
+  width: 100%;
+  padding: 1vw;
+  box-sizing: border-box;
+  object-fit: contain;
+}
+
+.LearnPageItem-gallery-bottom {
+  width: 30vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1vw;
+}
+.LearnPageItem-gallery-bottom img {
+  border: 2px solid silver;
+  width: 5vw;
+  height: 5vw;
+  padding: 5px;
+  box-sizing: border-box;
+  object-fit: contain;
+  transition: all 0.3s linear;
+}
+.selected-img {
+  width: 5vw;
+  height: 5vw;
+  background-color: rgb(214, 212, 212);
+  z-index: 10;
+}
+.LearnPageItem-gallery-bottom img:hover {
+  border-color: rgb(87, 87, 87);
+  cursor: pointer;
+}
+
+.LearnPageItem-des {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  width: 45vw;
+  gap: 2vh;
+}
+.LearnPageItem-des--title {
+  font-weight: bold;
+  font-size: 35px;
+}
+.LearnPageItem-des--details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.LearnPageItem-des--details-div {
+  width: 10vw;
+  font-size: 19px;
+}

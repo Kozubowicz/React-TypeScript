@@ -6,7 +6,7 @@ export function Links() {
         <div className='Links-list'>
           <div className='Links-list-item'>
             <div className='Links-list-item--img'>
-              <img src='/logos/LinkedIn.png' alt='LinkedIn' />
+              <img src='./logos/LinkedIn.png' alt='LinkedIn' />
             </div>
             <a
               className='Links-list-item--link'
@@ -18,7 +18,7 @@ export function Links() {
 
           <div className='Links-list-item'>
             <div className='Links-list-item--img'>
-              <img src='/logos/GitHub.png' alt='LinkedIn' />
+              <img src='./logos/GitHub.png' alt='LinkedIn' />
             </div>
             <a
               className='Links-list-item--link'
@@ -30,19 +30,19 @@ export function Links() {
 
           <div className='Links-list-item'>
             <div className='Links-list-item--img'>
-              <img src='/logos/email.png' alt='LinkedIn' />
+              <img src='./logos/email.png' alt='LinkedIn' />
             </div>
             <a
               className='Links-list-item--link'
               href='mailto:kozubowiczpiotr@gmail.com'
             >
-              Email: kozubowiczpiotr@gmail.com
+              kozubowiczpiotr@gmail.com
             </a>
           </div>
 
           <div className='Links-list-item'>
             <div className='Links-list-item--img'>
-              <img src='/logos/portfolio.png' alt='LinkedIn' />
+              <img src='./logos/portfolio.png' alt='LinkedIn' />
             </div>
             <a
               className='Links-list-item--link'

@@ -1,0 +1,110 @@
+[
+  {
+    "id": "w1",
+    "name": "John Doe",
+    "position": "Team Manager",
+    "img": "./workers/worker1.png"
+  },
+  {
+    "id": "w2",
+    "name": "Jane Smith",
+    "position": "Software Engineer",
+    "img": "./workers/worker2.png"
+  },
+  {
+    "id": "w3",
+    "name": "Emily Johnson",
+    "position": "Product Designer",
+    "img": "./workers/worker3.png"
+  },
+  {
+    "id": "w4",
+    "name": "Michael Brown",
+    "position": "HR Specialist",
+    "img": "./workers/worker4.png"
+  },
+  {
+    "id": "w5",
+    "name": "Sarah Davis",
+    "position": "Marketing Manager",
+    "img": "./workers/worker5.png"
+  },
+  {
+    "id": "w6",
+    "name": "Chris Wilson",
+    "position": "Data Analyst",
+    "img": "./workers/worker6.png"
+  },
+  {
+    "id": "w7",
+    "name": "Laura Taylor",
+    "position": "Project Manager",
+    "img": "./workers/worker7.png"
+  },
+  {
+    "id": "w8",
+    "name": "David Martinez",
+    "position": "UX Researcher",
+    "img": "./workers/worker8.png"
+  },
+  {
+    "id": "w9",
+    "name": "Olivia White",
+    "position": "DevOps Engineer",
+    "img": "./workers/worker9.png"
+  },
+  {
+    "id": "w10",
+    "name": "James Anderson",
+    "position": "QA Engineer",
+    "img": "./workers/worker10.png"
+  },
+  {
+    "id": "w11",
+    "name": "Sophia Clark",
+    "position": "Business Analyst",
+    "img": "./workers/worker11.png"
+  },
+  {
+    "id": "w12",
+    "name": "Daniel Lewis",
+    "position": "Backend Developer",
+    "img": "./workers/worker12.png"
+  },
+  {
+    "id": "w13",
+    "name": "Julieth Ethan",
+    "position": "Frontend Developer",
+    "img": "./workers/worker13.png"
+  },
+  {
+    "id": "w14",
+    "name": "Isabella Walker",
+    "position": "Scrum Master",
+    "img": "./workers/worker14.png"
+  },
+  {
+    "id": "w15",
+    "name": "William Hall",
+    "position": "IT Support Specialist",
+    "img": "./workers/worker15.png"
+  },
+  {
+    "id": "w16",
+    "name": "Mia Allen",
+    "position": "Systems Administrator",
+    "img": "./workers/worker16.png"
+  },
+  {
+    "id": "w17",
+    "name": "Ethan Young",
+    "position": "Cybersecurity Analyst",
+    "img": "./workers/worker17.png"
+  },
+  {
+    "id": "w18",
+    "name": "Ava King",
+    "position": "Cloud Architect",
+    "img": "./workers/worker18.png"
+  }
+]

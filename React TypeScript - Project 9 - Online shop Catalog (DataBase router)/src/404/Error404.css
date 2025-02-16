@@ -1,0 +1,15 @@
+.Error404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.Error404-H1 {
+  font-size: 80px;
+  font-weight: bold;
+}
+.Error404-H2 {
+  font-size: 20px;
+}

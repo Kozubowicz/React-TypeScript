@@ -3,8 +3,8 @@ export function AboutMe() {
     <>
       <div className='AboutMe'>
         <div className='AboutMe-left'>
-          <div className='AboutMe-img'>
-            <img src='/profileImg.png' alt='picture' />
+          <div className='AboutMe-left--img'>
+            <img src='./profileImg.png' alt='picture' />
           </div>
         </div>
         <div className='AboutMe-right'>
@@ -31,7 +31,7 @@ export function AboutMe() {
               <b>Polish</b> Native
             </div>
             <div className='AboutMe-right--languages-item'>
-              <b>English</b> Advanced level C1+
+              <b>English</b> Advanced level C1
             </div>
           </div>
         </div>

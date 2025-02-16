@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "The Importance of a Balanced Diet",
+    "body": "A well-balanced diet provides essential nutrients that support overall health and well-being. Eating a variety of whole foods, including fruits, vegetables, lean proteins, and healthy fats, ensures your body gets the vitamins and minerals it needs.",
+    "img": "./sience/sience1.png"
+  },
+  {
+    "id": 2,
+    "title": "The Role of Protein in Nutrition",
+    "body": "Protein is crucial for muscle growth, repair, and overall body function. Including lean meats, plant-based proteins, and dairy in your diet helps maintain strength and energy levels.",
+    "img": "./sience/sience2.png"
+  },
+  {
+    "id": 3,
+    "title": "Benefits of Omega-3 Fatty Acids",
+    "body": "Omega-3s are essential fats that support brain function and heart health. They can be found in fish, flaxseeds, and walnuts, making them a vital part of a healthy diet.",
+    "img": "./sience/sience3.png"
+  },
+  {
+    "id": 4,
+    "title": "The Power of Antioxidants",
+    "body": "Antioxidants help protect cells from damage caused by free radicals. Foods rich in antioxidants, like berries, nuts, and dark chocolate, can reduce inflammation and support long-term health.",
+    "img": "./sience/sience4.png"
+  },
+  {
+    "id": 5,
+    "title": "Why Hydration is Key",
+    "body": "Drinking enough water is essential for digestion, circulation, and temperature regulation. Staying hydrated helps your body function optimally and can even boost energy levels.",
+    "img": "./sience/sience5.png"
+  },
+  {
+    "id": 6,
+    "title": "Choosing the Right Supplements",
+    "body": "While whole foods should be the main source of nutrients, supplements can fill in the gaps. Vitamins like D, B12, and magnesium are commonly needed, especially for those with dietary restrictions.",
+    "img": "./sience/sience6.png"
+  }
+]

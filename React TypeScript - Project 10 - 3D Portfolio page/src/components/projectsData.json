@@ -11,21 +11,24 @@
     "name": "Multi grid layout",
     "technologies": ["HTML", "CSS", "SCSS", "JavaScript"],
     "demo": "https://kozubowicz-portfolio.onrender.com/Projects/Project%205%20-%20HTML%20CSS%20JS%20-%20Multi%20grid%20layout/",
-    "code": "https://github.com/Kozubowicz/Projects-JavaScript/tree/main/Project%2012%20Multi%20grid%20layout"
+    "code": "https://github.com/Kozubowicz/Projects-JavaScript/tree/main/Project%2012%20Multi%20grid%20layout",
+    "description": ""
   },
   {
     "id": 1003,
     "name": "2048",
     "technologies": ["HTML", "CSS", "SCSS", "JavaScript"],
     "demo": "https://kozubowicz-portfolio.onrender.com/Projects/Project%2016%20-%20HTML%20CSS%20JS%20-%202048/",
-    "code": "https://github.com/Kozubowicz/Projects-JavaScript/tree/main/Project%2013%202048"
+    "code": "https://github.com/Kozubowicz/Projects-JavaScript/tree/main/Project%2013%202048",
+    "description": ""
   },
   {
     "id": 1004,
     "name": "Express Js Portfolio",
     "technologies": ["HTML", "CSS", "ExpressJs", "JavaScript"],
     "demo": "https://kozubowicz-portfolio.onrender.com",
-    "code": "https://github.com/Kozubowicz/Kozubowicz-Portfolio"
+    "code": "https://github.com/Kozubowicz/Kozubowicz-Portfolio",
+    "description": ""
   },
   {
     "id": 1005,
@@ -47,7 +50,8 @@
       "API"
     ],
     "demo": "https://kozubowicz-portfolio.onrender.com/Projects/Project%2014%20-%20React%20TypeScript%20-%20Project%205%20-%20Expanses%20tracker%20Database/",
-    "code": "https://github.com/Kozubowicz/React-TypeScript/tree/main/React%20TypeScript%20-%20Project%206%20-%20Expanses%20tracker%20Database"
+    "code": "https://github.com/Kozubowicz/React-TypeScript/tree/main/React%20TypeScript%20-%20Project%206%20-%20Expanses%20tracker%20Database",
+    "description": ""
   },
   {
     "id": 1007,
@@ -69,6 +73,7 @@
       "API"
     ],
     "demo": "https://kozubowicz-portfolio.onrender.com/Projects/Project%2017%20-%20React%20TypeScript%20-%20Project%207%20-%20Online%20shop%20+%20MongoDb%20database%20+%20Router/",
-    "code": ""
+    "code": "",
+    "description": "3D interactively portfolio website showcasing personal informations, projects, skills"
   }
 ]

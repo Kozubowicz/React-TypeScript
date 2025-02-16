@@ -2,25 +2,25 @@
   border: 2px solid silver;
   border-radius: 50px;
   background-color: rgba($color: #000000, $alpha: 0.5);
-  box-shadow: 0 0 100px rgba(0, 224, 176, 0.979);
-  padding: 5vh 5vw;
+  box-shadow: 0 0 100px rgb(0, 224, 176);
+  padding: 2vh 5vw;
   width: fit-content;
   margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 3vh;
+  gap: 2vh;
   &-Header {
     font-size: 75px;
     text-align: center;
   }
   &-list {
     list-style: none;
-    line-height: 2;
+    line-height: 2.5;
     &-item {
       display: flex;
       gap: 20px;
       align-items: center;
-      font-size: 25px;
+      font-size: 20px;
 
       &--img {
         width: 30px;

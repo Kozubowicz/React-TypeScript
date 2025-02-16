@@ -13,7 +13,7 @@ export function Projects() {
                 {project.technologies.map((technology) => (
                   <div className='technology'>
                     <div className='technology--img'>
-                      <img src={`/logos/${technology}.png`} alt={technology} />
+                      <img src={`./logos/${technology}.png`} alt={technology} />
                     </div>
                     <div className='technology--name'>{technology}</div>
                   </div>
