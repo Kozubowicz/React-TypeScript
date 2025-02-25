@@ -4,8 +4,8 @@ export function NavBar() {
       <nav className='NavBar'>
         <a href='#' className='NavBar-item'>
           About Me
-				</a>
-				<a href='#skills' className='NavBar-item'>
+        </a>
+        <a href='#skills' className='NavBar-item'>
           Skills
         </a>
         <a href='#projects' className='NavBar-item'>
@@ -13,9 +13,6 @@ export function NavBar() {
         </a>
         <a href='#education' className='NavBar-item'>
           Education
-        </a>
-        <a href='#links' className='NavBar-item'>
-          Links
         </a>
       </nav>
     </>

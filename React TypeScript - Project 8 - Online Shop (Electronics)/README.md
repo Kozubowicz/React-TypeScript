@@ -1,4 +1,4 @@
-React typescript app 
+React typescript app
 
 App Functionality:
 Downloading items description from JSON file.

@@ -137,12 +137,6 @@ button {
   cursor: pointer;
 }
 
-.HomePage {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  padding-bottom: 200px;
-}
 .HomePost {
   margin: 1rem 0rem;
   display: flex;

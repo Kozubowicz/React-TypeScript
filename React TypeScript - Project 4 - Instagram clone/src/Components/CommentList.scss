@@ -1,0 +1,14 @@
+.CommentList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin: 0.5rem 1rem;
+
+  &-item {
+    &--body {
+      margin-left: 45px;
+      font-size: small;
+      color: #afafaf;
+    }
+  }
+}

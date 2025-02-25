@@ -1,0 +1,22 @@
+.PostItem {
+  margin: 1rem 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid rgb(119, 117, 117);
+
+  &--img {
+    display: flex;
+    justify-content: center;
+    & img {
+      max-width: 100%;
+    }
+  }
+
+  &--des {
+    text-align: center;
+    padding: 1rem;
+  }
+}

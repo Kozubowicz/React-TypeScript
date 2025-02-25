@@ -1,0 +1,16 @@
+.LogInSignUp {
+  margin: 2vh auto;
+  max-width: 90vw;
+
+  &-close {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    & button {
+      font-size: x-large;
+      background-color: transparent;
+      border: none;
+    }
+  }
+}

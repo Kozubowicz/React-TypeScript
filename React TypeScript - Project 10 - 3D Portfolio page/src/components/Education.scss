@@ -2,17 +2,15 @@
   display: flex;
   flex-direction: column;
   font-size: 6vw;
-  border: 2px solid silver;
   text-align: center;
-  border-radius: 50px;
-  background-color: rgba($color: #000000, $alpha: 0.5);
+  background-color: rgba(#0000, 0.3);
   box-shadow: 0 0 100px rgb(0, 224, 176);
-  margin: 0 10vw;
+
   padding: 5vh 5vw;
   gap: 5vh;
 
   &-list {
-    font-size: 2.5vw;
+    font-size: 3rem;
     margin-left: 3vw;
     display: flex;
     flex-direction: column;

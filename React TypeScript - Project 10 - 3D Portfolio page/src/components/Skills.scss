@@ -15,31 +15,33 @@
     flex-wrap: wrap;
     gap: 3vh 2vw;
     justify-content: center;
-
-    &-item {
+    &-container {
       flex: 0 1 40%;
       max-width: 550px;
-      background-color: rgba(blue, 0.2);
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      border: 2px solid silver;
-      border-radius: 50px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
-
-      &--head {
-        padding: 15px 0;
-        font-size: 25px;
-        font-weight: bold;
-        text-align: center;
-        border-bottom: 2px solid silver;
-      }
-      &--body {
+      &-item {
+        background-color: rgba(blue, 0.2);
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        height: 100%;
         gap: 20px;
-        padding: 0 10px 25px;
+        border: 2px solid silver;
+        border-radius: 50px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+
+        &--head {
+          padding: 15px 0;
+          font-size: 25px;
+          font-weight: bold;
+          text-align: center;
+          border-bottom: 2px solid silver;
+        }
+        &--body {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 20px;
+          padding: 0 10px 25px;
+        }
       }
     }
   }

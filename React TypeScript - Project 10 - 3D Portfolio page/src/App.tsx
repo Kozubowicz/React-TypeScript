@@ -1,7 +1,6 @@
 import './App.scss';
 import { AboutMe } from './components/AboutMe';
 import { Education } from './components/Education';
-import { Links } from './components/Links';
 import { NavBar } from './components/NavBar';
 import { Projects } from './components/Projects';
 import { Skills } from './components/Skills';
@@ -22,9 +21,7 @@ function App() {
       <section id='education'>
         <Education />
       </section>
-      <section id='links'>
-        <Links />
-      </section>
+
       <div className='BacgroundAnimation' />
     </>
   );

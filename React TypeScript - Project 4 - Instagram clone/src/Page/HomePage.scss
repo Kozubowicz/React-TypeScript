@@ -1,0 +1,24 @@
+.HomePage {
+  display: flex;
+  width: 100%;
+
+  &-item {
+    flex: 1;
+    margin-top: 2rem;
+
+    &-site {
+      position: sticky;
+      top: 2rem;
+      max-height: 100vh;
+
+      @media (max-aspect-ratio: 16/18) {
+        display: none;
+      }
+    }
+
+    &-postsList {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

@@ -1,68 +1,59 @@
-import { useInstaContext } from "../Context/InstaContext";
-import { MyProfile } from "./MyProfile";
-import Logo from "/Logo.png";
-type NavBarProps = {
-  setLogSign: (e: boolean) => void;
-};
-export function NavBar({ setLogSign }: NavBarProps) {
+import { Link } from 'react-router-dom';
+import { useInstaContext } from '../Context/InstaContext';
+import { ProfileHeader } from './ProfileHeader';
+import Logo from '/Logo.png';
+
+export function NavBar() {
   const {
     LightDarkModeChanger,
     DarkMode,
-    setUserId,
-    setShowNavBar,
-    aspectRatio,
     searchUserResult,
     serachUser,
-    tokenId,
     myProfile,
+    showNavBar,
   } = useInstaContext();
 
   return (
     <>
-      <div className={`NavBar ${aspectRatio <= 0.9 ? "mobile" : ""} ${DarkMode && "dark"}`}>
+      <div className={`NavBar ${showNavBar && 'mobile'} ${DarkMode && 'dark'}`}>
         <div>
-          <div className="LightDarkModeSet">
+          <div className='NavBar-LightDarkModeSet'>
             Dark Mode
             <input
-              type="checkbox"
-              id="DarkModeCheckbox"
+              type='checkbox'
+              className='NavBar-LightDarkModeSet--Checkbox'
               checked={DarkMode}
               onChange={() => LightDarkModeChanger()}
             />
           </div>
 
-          <div
-            className="TitleLogoContainer"
-            onClick={() => {
-              setUserId(""), setLogSign(false);
-            }}
-          >
-            <label className="InstaTitle">Insta App</label>
+          <Link to='/' className='NavBar-TitleLogo Link'>
+            <label className='NavBar-TitleLogo--label'>Insta App</label>
             <img src={Logo} width={40} />
-          </div>
+          </Link>
 
           <input
-            type="text"
-            className={`inputBar ${DarkMode ? "dark" : ""}`}
+            type='text'
+            className={`inputBar ${DarkMode ? 'dark' : ''}`}
             onChange={(e) => serachUser(e.target.value)}
           />
 
-          <div className="userList">
+          <div className='NavBar-userList'>
             {searchUserResult?.map((e) => (
-              <div
-                className="userListElement"
+              <Link
+                to={e._id}
+                className='NavBar-userList--item Link'
                 key={e._id}
-                onClick={() => (setUserId(e._id), setShowNavBar(false))}
               >
                 {e.userName}
-              </div>
+              </Link>
             ))}
           </div>
         </div>
-        {tokenId && (
-          <div style={{ padding: "0vh 0vh 10rem 0vh" }}>
-            <MyProfile
-              profileImgSize={"30px"}
+        {myProfile && (
+          <div style={{ padding: '0vh 0vh 10rem 0vh' }}>
+            <ProfileHeader
+              profileImgSize={'30px'}
               profileImgUrl={myProfile.profileImg}
               profileId={myProfile._id}
               profileName={myProfile.userName}

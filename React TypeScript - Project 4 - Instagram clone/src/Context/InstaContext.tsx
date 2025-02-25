@@ -1,87 +1,53 @@
-import { createContext, ReactNode, useContext, useEffect, useState } from "react";
-import { useLocalStorage } from "../hooks/useLocalStorage";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
+import { useLocalStorage } from '../hooks/useLocalStorage';
+import {
+  PostsPageType,
+  PostType,
+  ProfilePageType,
+  ProfileType,
+  searchUserResultType,
+} from '../utils/Types';
 
 type InstaContextProvider = {
   children: ReactNode;
 };
-type MyProfile = {
-  _id: string;
-  userName: string;
-  profileImg: string;
-  description: string;
-};
-type getPostsType = {
-  posts: PostType[];
-  pagesNumber: number;
-};
-type PostType = {
-  _id: string;
-  userId: string;
-  name: string;
-  description: string;
-  imgUrl: string;
-  userName: string;
-  profileImg: string;
-};
-type UserProfile = {
-  _id: string;
-  userName: string;
-  profileImg: string;
-  description: string;
-  posts: UserPosts[];
-};
-type UserPosts = {
-  _id: string;
-  userId: string;
-  name: string;
-  description: string;
-  imgUrl: string;
-};
-type ModalUser = {
-  userId: string;
-  userName: string;
-  profileImg: string;
-};
-
-type searchUserResult = {
-  _id: string;
-  userName: string;
-  profileImg: string;
-  description: string;
-};
 
 type InstaContext = {
-  setSucess: (e: boolean | undefined) => void;
-  sucess: boolean | undefined;
-  tokenId: string;
-  myProfile: MyProfile;
-  LogIn: (email: string, password: string) => void;
+  tokenId: string | undefined;
+  myProfile: ProfileType | undefined;
+  LogIn: (
+    email: string,
+    password: string
+  ) => Promise<{ success: boolean; message: string }>;
   SignOut: () => void;
-  SignUp: (userName: string, email: string, password: string) => Promise<string>;
+  SignUp: (
+    userName: string,
+    email: string,
+    password: string
+  ) => Promise<{ success: boolean; message: string }>;
 
   DarkMode: boolean;
   LightDarkModeChanger: (e: void) => void;
-  aspectRatio: number;
   showNavBar: boolean;
   setShowNavBar: (show: boolean) => void;
-  modalOn: boolean;
-  setModalOn: (show: boolean) => void;
-  modalImg: string;
-  setModalImg: (img: string) => void;
-  modalUser: ModalUser;
-  setModalUser: (ModalUser: ModalUser) => void;
 
-  userId: string;
-  setUserId: (_id: string) => void;
+  getUserProfile: (_id: string) => Promise<ProfilePageType | boolean>;
 
-  userProfile: UserProfile;
-  getUserProfile: (_id: string) => Promise<void>;
-
-  getPosts: (page: number) => Promise<getPostsType>;
+  getPostsPage: (page: number) => Promise<PostsPageType | boolean>;
 
   serachUser: (userName: string) => Promise<void>;
 
-  searchUserResult: searchUserResult[];
+  getPost: (postId: string) => Promise<PostType | boolean>;
+
+  hasLiked: (postId: string, userId: string) => Promise<boolean>;
+  addRemoveLike: (postId: string, userId: string) => Promise<boolean>;
+  searchUserResult: searchUserResultType[];
 };
 
 const InstaContext = createContext({} as InstaContext);
@@ -89,142 +55,180 @@ export function useInstaContext() {
   return useContext(InstaContext);
 }
 export function InstaContextProvider({ children }: InstaContextProvider) {
-  const [sucess, setSucess] = useState<boolean | undefined>();
-  const [tokenId, setTokenId] = useLocalStorage<string>("tokenId", "");
-  const [myProfile, setMyProfile] = useState<MyProfile>({} as MyProfile);
+  const [tokenId, setTokenId] = useLocalStorage<string>('tokenId', '');
+  const [myProfile, setMyProfile] = useState<ProfileType | undefined>();
 
-  const [userId, setUserId] = useState<string>("");
-  const [DarkMode, setDarkMode] = useLocalStorage<boolean>("DarkMode", true);
-  const [aspectRatio, setAspectRatio] = useState<number>(0);
+  const [DarkMode, setDarkMode] = useLocalStorage<boolean>('DarkMode', true);
+
   const [showNavBar, setShowNavBar] = useState<boolean>(false);
-  const [modalOn, setModalOn] = useState<boolean>(false);
-  const [modalImg, setModalImg] = useState<string>("");
-  const [modalUser, setModalUser] = useState<ModalUser>({} as ModalUser);
 
-  const [searchUserResult, setSearchUserResult] = useState<searchUserResult[]>([]);
-  const [userProfile, setUserProfile] = useState<UserProfile>({} as UserProfile);
+  const [searchUserResult, setSearchUserResult] = useState<
+    searchUserResultType[]
+  >([]);
 
-  function handleResize(): void {
-    const { innerWidth, innerHeight } = window;
-    const tmp = innerWidth / innerHeight;
-    setAspectRatio(tmp);
-  }
-  window.addEventListener("resize", handleResize);
-
+  // toggle light/dark mode
   function LightDarkModeChanger() {
     setDarkMode(!DarkMode);
   }
 
+  // Light dark mode
   useEffect(() => {
     if (DarkMode) {
-      document.body.classList.add("dark");
+      document.body.classList.add('dark');
     } else {
-      document.body.classList.remove("dark");
+      document.body.classList.remove('dark');
     }
-    handleResize();
   }, [DarkMode]);
 
+  // downloading user data from db, base on token in storage
   useEffect(() => {
     const getMyProfile = async () => {
-      if (tokenId.length > 5) {
-        try {
-          const response = await fetch(
-            `https://us-east-1.aws.data.mongodb-api.com/app/instacloneapi-phjfx/endpoint/getMyProfile?userId=${tokenId}`
-          );
-          if (!response.ok) {
-            throw new Error();
+      try {
+        const response = await fetch(
+          `https://us-east-1.aws.data.mongodb-api.com/app/instacloneapi-phjfx/endpoint/getMyProfile`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userId: tokenId }),
           }
-          const jsonData = await response.json();
-          setMyProfile(jsonData);
-        } catch (error) {
-          console.error("Error");
+        );
+
+        const jsonData = await response.json();
+        if (!response.ok) {
+          throw new Error();
         }
+
+        setMyProfile(jsonData);
+      } catch (error) {
+        setTokenId('');
+        console.error('Error', error);
+        throw error;
       }
     };
-    getMyProfile();
+
+    if (tokenId && tokenId?.length > 5) {
+      getMyProfile();
+    }
   }, [tokenId]);
 
-  const SignOut = () => setTokenId("");
+  // cleaning user token from storage
+  const SignOut = () => setTokenId('');
 
-  async function LogIn(email: string, password: string): Promise<void> {
+  // handling user log in
+  async function LogIn(
+    email: string,
+    password: string
+  ): Promise<{ success: boolean; message: string }> {
     try {
       const response = await fetch(
-        `https://us-east-1.aws.data.mongodb-api.com/app/instacloneapi-phjfx/endpoint/LogIn?email=${email}&password=${password}`
+        `https://us-east-1.aws.data.mongodb-api.com/app/instacloneapi-phjfx/endpoint/LogIn?email=${email}&password=${password}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password }),
+        }
       );
-      if (!response.ok) {
-        setSucess(false);
-        throw new Error();
-      }
+
       const jsonData = await response.json();
-      setTokenId(jsonData);
+
+      if (jsonData.success) {
+        console.log(jsonData.id);
+        setTokenId(jsonData.id);
+      }
+      return jsonData;
     } catch (error) {
-      console.error("Error Logn In");
-      throw error;
+      console.error('Error Logn In');
+      return { success: false, message: 'Internal Error' };
     }
   }
 
-  async function SignUp(userName: string, email: string, password: string): Promise<string> {
+  // handling user sign up
+  async function SignUp(
+    userName: string,
+    email: string,
+    password: string
+  ): Promise<{ success: boolean; message: string }> {
     try {
       const response = await fetch(
-        `https://us-east-1.aws.data.mongodb-api.com/app/instacloneapi-phjfx/endpoint/SingUp?userName=${userName}&email=${email}&password=${password}`
+        `https://us-east-1.aws.data.mongodb-api.com/app/instacloneapi-phjfx/endpoint/SingUp`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userName, email, password }),
+        }
       );
-      if (!response.ok) {
-        setSucess(false);
-        throw new Error();
-      }
-      setSucess(true);
+
       const jsonData = await response.json();
-      return jsonData as string;
+      return jsonData;
     } catch (error) {
-      console.error("Error");
-      throw error;
+      console.error('Error', error);
+      return { success: false, message: 'Internal server error' };
     }
   }
 
-  async function getPosts(page: number): Promise<getPostsType> {
+  // downloading page of posts
+  async function getPostsPage(page: number): Promise<PostsPageType | boolean> {
     try {
       const response = await fetch(
-        `https://us-east-1.aws.data.mongodb-api.com/app/instacloneapi-phjfx/endpoint/getPosts?page=${page}`
+        `https://us-east-1.aws.data.mongodb-api.com/app/instacloneapi-phjfx/endpoint/getPostsPage`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ page }),
+        }
       );
       if (!response.ok) {
         throw new Error();
       }
       const jsonData = await response.json();
-      console.log(jsonData);
 
       return {
         posts: jsonData.posts,
         pagesNumber: jsonData.pagesNumber,
       };
     } catch (error) {
-      console.error("Error");
-      throw error;
+      console.error('Error', error);
+      return false;
     }
   }
 
-  async function getUserProfile(_id: String): Promise<void> {
+  // downloading chosen user profile
+  async function getUserProfile(
+    _id: string
+  ): Promise<ProfilePageType | boolean> {
     try {
       const response = await fetch(
-        `https://us-east-1.aws.data.mongodb-api.com/app/instacloneapi-phjfx/endpoint/getProfile?userId=${_id}`
+        `https://us-east-1.aws.data.mongodb-api.com/app/instacloneapi-phjfx/endpoint/getProfile`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userId: _id }),
+        }
       );
 
       if (!response.ok) {
         throw new Error();
       }
       const jsonData = await response.json();
-      setUserProfile(jsonData);
-      //return jsonData;
+
+      return jsonData;
     } catch (error) {
-      console.error("Error");
-      throw error;
+      console.error('Error');
+      return false;
     }
   }
 
+  // searching users
   async function serachUser(userName: string): Promise<void> {
     if (userName.length > 0) {
       try {
         const response = await fetch(
-          `https://us-east-1.aws.data.mongodb-api.com/app/instacloneapi-phjfx/endpoint/SearchUsers?searchPhrase=${userName}`
+          `https://us-east-1.aws.data.mongodb-api.com/app/instacloneapi-phjfx/endpoint/SearchUsers`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ searchPhrase: userName }),
+          }
         );
         if (!response.ok) {
           throw new Error();
@@ -233,17 +237,91 @@ export function InstaContextProvider({ children }: InstaContextProvider) {
 
         setSearchUserResult(jsonData);
       } catch (error) {
-        console.error("Error");
+        console.error('Error');
       }
     } else setSearchUserResult([]);
   }
+
+  const getPost = async (postId: string): Promise<PostType | boolean> => {
+    try {
+      const response = await fetch(
+        'https://us-east-1.aws.data.mongodb-api.com/app/instacloneapi-phjfx/endpoint/getPost',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ postId }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error();
+      }
+
+      const jsonData = await response.json();
+      return jsonData;
+    } catch (error) {
+      console.error('Error');
+      return false;
+    }
+  };
+
+  const hasLiked = async (postId: string, userId: string): Promise<boolean> => {
+    try {
+      const response = await fetch(
+        'https://us-east-1.aws.data.mongodb-api.com/app/instacloneapi-phjfx/endpoint/hasLiked',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ postId, userId }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error();
+      }
+      const jsonData = await response.json();
+
+      console.log(jsonData);
+
+      return jsonData.hasLiked;
+    } catch (error) {
+      console.error('Error');
+      return false;
+    }
+  };
+
+  const addRemoveLike = async (
+    postId: string,
+    userId: string
+  ): Promise<boolean> => {
+    try {
+      const response = await fetch(
+        'https://us-east-1.aws.data.mongodb-api.com/app/instacloneapi-phjfx/endpoint/addRemoveLike',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ postId, userId }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error();
+      }
+      const jsonData = await response.json();
+
+      console.log(jsonData);
+
+      return jsonData.hasLiked;
+    } catch (error) {
+      console.error('Error');
+      return false;
+    }
+  };
 
   return (
     <>
       <InstaContext.Provider
         value={{
-          setSucess,
-          sucess,
           tokenId,
           myProfile,
           LogIn,
@@ -252,21 +330,15 @@ export function InstaContextProvider({ children }: InstaContextProvider) {
 
           LightDarkModeChanger,
           DarkMode,
-          userId,
-          setUserId,
-          aspectRatio,
           setShowNavBar,
           showNavBar,
-          setModalOn,
-          modalOn,
-          setModalImg,
-          modalImg,
-          setModalUser,
-          modalUser,
-          getPosts,
 
-          userProfile,
+          getPostsPage,
           getUserProfile,
+
+          getPost,
+          hasLiked,
+          addRemoveLike,
 
           serachUser,
           searchUserResult,

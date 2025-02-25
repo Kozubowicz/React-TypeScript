@@ -1,4 +1,5 @@
-import { SkillsItem } from './SkillsItem';
+import { SkillsItemList } from './SkillsItemList';
+import { SkillsItemWindow } from './SkillsItemWindow';
 
 const frontEndSkills = [
   { id: 1, name: 'HTML', img: './logos/HTML.png' },
@@ -42,15 +43,13 @@ export function Skills() {
       <div className='Skills'>
         <div className='Skills-Header'>Skills</div>
         <div className='Skills-windows'>
-          <SkillsItem skillsType={'Front-end'} skills={frontEndSkills} />
-          <SkillsItem skillsType={'Back-end'} skills={backEndSkills} />
-          <SkillsItem skillsType={'Other'} skills={otherSkills} />
+          <SkillsItemWindow skillsType={'Front-end'} skills={frontEndSkills} />
+          <SkillsItemWindow skillsType={'Back-end'} skills={backEndSkills} />
+          <SkillsItemWindow skillsType={'Other'} skills={otherSkills} />
         </div>
         <ul className='Skills-list'>
           {listedSkills.map((skill) => (
-            <li key={skill.id} className='Skills-list-item'>
-              {skill.body}
-            </li>
+            <SkillsItemList key={skill.id} skill={skill} />
           ))}
         </ul>
       </div>

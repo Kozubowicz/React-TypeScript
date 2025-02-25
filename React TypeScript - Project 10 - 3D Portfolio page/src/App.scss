@@ -3,14 +3,17 @@
 @use './components/NavBar.scss';
 @use './components/Education.scss';
 @use './components/Skills.scss';
-@use './components/Links.scss';
 @use './components/Projects.scss';
 
 body {
   margin: 0;
-  min-height: 100vh;
-  background: linear-gradient(rgb(0, 70, 41), #001806);
-  background-color: rgb(1, 39, 0);
+  background: radial-gradient(
+    circle at top,
+    rgb(7, 0, 24) 45%,
+    rgb(3, 104, 62) 100%
+  );
+  background-attachment: fixed;
+  background-color: black;
   color: white;
   font-family: 'Times New Roman', Times, serif;
 }
@@ -39,4 +42,15 @@ section {
     font-size: 16px;
     white-space: nowrap;
   }
+}
+
+.slideOut {
+  transform: translateY(50%);
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.slideIn {
+  opacity: 1;
+  transform: translateY(0);
 }

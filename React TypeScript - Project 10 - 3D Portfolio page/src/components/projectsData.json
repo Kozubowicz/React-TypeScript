@@ -4,7 +4,8 @@
     "name": "Weather Api",
     "technologies": ["HTML", "CSS", "SCSS", "JavaScript", "API"],
     "demo": "https://kozubowicz-portfolio.onrender.com/Projects/Project%201%20-%20HTML%20CSS%20JS%20-%20Weather%20Api/",
-    "code": "https://github.com/Kozubowicz/Projects-JavaScript/tree/main/Project%203%20Weather%20rest%20api"
+    "code": "https://github.com/Kozubowicz/Projects-JavaScript/tree/main/Project%203%20Weather%20rest%20api",
+    "description": "A website to present weather data, retrieving the user's location from the browser navigator"
   },
   {
     "id": 1002,
@@ -12,7 +13,7 @@
     "technologies": ["HTML", "CSS", "SCSS", "JavaScript"],
     "demo": "https://kozubowicz-portfolio.onrender.com/Projects/Project%205%20-%20HTML%20CSS%20JS%20-%20Multi%20grid%20layout/",
     "code": "https://github.com/Kozubowicz/Projects-JavaScript/tree/main/Project%2012%20Multi%20grid%20layout",
-    "description": ""
+    "description": "Landing page containing 3 types of Grid Layout depending of screen width: Desktop, Tablet, Mobile"
   },
   {
     "id": 1003,
@@ -20,7 +21,7 @@
     "technologies": ["HTML", "CSS", "SCSS", "JavaScript"],
     "demo": "https://kozubowicz-portfolio.onrender.com/Projects/Project%2016%20-%20HTML%20CSS%20JS%20-%202048/",
     "code": "https://github.com/Kozubowicz/Projects-JavaScript/tree/main/Project%2013%202048",
-    "description": ""
+    "description": "Web implementationgame of 2048 game"
   },
   {
     "id": 1004,
@@ -28,14 +29,15 @@
     "technologies": ["HTML", "CSS", "ExpressJs", "JavaScript"],
     "demo": "https://kozubowicz-portfolio.onrender.com",
     "code": "https://github.com/Kozubowicz/Kozubowicz-Portfolio",
-    "description": ""
+    "description": "Classic portfolio page presenting Cv and list of projects dynalicly created and sorted by Express.js code "
   },
   {
     "id": 1005,
     "name": "Note app",
     "technologies": ["HTML", "CSS", "React", "JavaScript", "TypeScript"],
     "demo": "https://kozubowicz-portfolio.onrender.com/Projects/Project%2011%20-%20React%20TypeScript%20-%20Project%202%20-%20Note%20app/",
-    "code": "https://github.com/Kozubowicz/React-TypeScript/tree/main/React%20TypeScript%20-%20Project%202%20-%20Note%20app"
+    "code": "https://github.com/Kozubowicz/React-TypeScript/tree/main/React%20TypeScript%20-%20Project%202%20-%20Note%20app",
+    "description": "App save notes in browser storage, allows to search notes by tag"
   },
   {
     "id": 1006,
@@ -51,14 +53,15 @@
     ],
     "demo": "https://kozubowicz-portfolio.onrender.com/Projects/Project%2014%20-%20React%20TypeScript%20-%20Project%205%20-%20Expanses%20tracker%20Database/",
     "code": "https://github.com/Kozubowicz/React-TypeScript/tree/main/React%20TypeScript%20-%20Project%206%20-%20Expanses%20tracker%20Database",
-    "description": ""
+    "description": "Application allows to track user his expenses, adding and removing periods and items"
   },
   {
     "id": 1007,
     "name": "Online shop Catalog ver1",
     "technologies": ["HTML", "SCSS", "React", "JavaScript", "TypeScript"],
     "demo": "https://kozubowicz-portfolio.onrender.com/Projects/Project%2015%20-%20React%20TypeScript%20-%20Project%206%20-%20Online%20shop%20Catalog%20+%20Router/#/",
-    "code": "https://github.com/Kozubowicz/React-TypeScript/tree/main/React%20TypeScript%20-%20Project%208%20-%20Online%20Shop%20(Electronics)"
+    "code": "https://github.com/Kozubowicz/React-TypeScript/tree/main/React%20TypeScript%20-%20Project%208%20-%20Online%20Shop%20(Electronics)",
+    "description": "Online shop website, downloading items description from JSON file, using router to navigation and search query"
   },
   {
     "id": 1008,
@@ -73,7 +76,7 @@
       "API"
     ],
     "demo": "https://kozubowicz-portfolio.onrender.com/Projects/Project%2017%20-%20React%20TypeScript%20-%20Project%207%20-%20Online%20shop%20+%20MongoDb%20database%20+%20Router/",
-    "code": "",
-    "description": "3D interactively portfolio website showcasing personal informations, projects, skills"
+    "code": "https://github.com/Kozubowicz/React-TypeScript/tree/main/React%20TypeScript%20-%20Project%209%20-%20Online%20shop%20Catalog%20(DataBase%20router)",
+    "description": "Advanced online shop website, landing page, multiple animations, interactive elements, dynamic shop content fetched from a database using a REST API"
   }
 ]

@@ -1,0 +1,113 @@
+@use './Components/Loader.scss';
+@use './Page/HomePage.scss';
+@use './Components/NavBar.scss';
+@use './Components/NavBarMini.scss';
+@use './Components/Form.scss';
+@use './Components/ProfileHeader.scss';
+@use './Page/PostPage.scss';
+@use './Page/ProfilePage.scss';
+@use './Page/LogInSignUp.scss';
+@use './Components/PostItem.scss';
+@use './Components/CommentList.scss';
+
+body {
+  background-color: white;
+  color: black;
+  margin: 0px;
+}
+body.dark {
+  background-color: black;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(70, 70, 70);
+  border-radius: 10px;
+}
+
+.Link {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background-color: rgb(16, 87, 128);
+  color: white;
+  font-size: 1rem;
+  padding: 0.3rem 1.5rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  border: 1px solid slategray;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+.ReactionButton {
+  background-color: transparent;
+  border: none;
+}
+
+.comment {
+  position: relative;
+}
+.comment:hover::after {
+  position: absolute;
+  content: 'comment';
+  font-size: x-small;
+  font-weight: 100;
+  left: 0;
+  bottom: -50%;
+  padding: 1px 3px;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
+
+.like {
+  position: relative;
+}
+.like:hover::after {
+  position: absolute;
+  content: 'like';
+  font-size: x-small;
+  font-weight: 100;
+  left: 0;
+  bottom: -50%;
+  padding: 1px 3px;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
+
+input {
+  background-color: transparent;
+  color: black;
+  margin: 0 20px;
+  font-size: 1rem;
+  border-radius: 20px;
+  padding: 0.2rem 0.4rem;
+  &.dark {
+    color: white;
+  }
+}
+
+.AppContainer {
+  display: flex;
+  min-height: 100vh;
+  &-router {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    &-pages {
+      flex-grow: 1;
+    }
+  }
+}

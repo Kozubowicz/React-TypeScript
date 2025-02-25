@@ -7,7 +7,6 @@
   flex-direction: column;
   gap: 5vh;
   align-items: center;
-
   box-shadow: 0 0 100px rgb(0, 224, 176);
 
   &-header {
@@ -18,21 +17,19 @@
     flex-wrap: wrap;
     gap: 2vh;
     justify-content: center;
+    overflow: hidden;
 
     &-item {
-      min-width: 20%;
       background-color: rgba(blue, 0.2);
-      box-shadow: inset 0 -5px 20px rgba(255, 255, 255, 0.2);
+      box-shadow: inset 0 -20px 40px #370255;
       padding: 1vh 0;
       display: flex;
       flex-direction: column;
       max-width: 450px;
-      transition: all 0.2s ease-in-out;
 
       &:hover {
         transform: translateY(-1vh);
       }
-
       &--header {
         font-size: 25px;
         display: flex;
@@ -41,6 +38,9 @@
         text-align: center;
         padding: 2vh 2vw;
         border-bottom: 2px solid silver;
+      }
+      &--description {
+        margin: 10px 15px;
       }
       &--technologies {
         padding: 20px;
