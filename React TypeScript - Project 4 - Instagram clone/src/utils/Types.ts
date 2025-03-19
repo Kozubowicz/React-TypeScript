@@ -26,7 +26,7 @@ export type ProfilePageType = ProfileType & {
 
 export type CommentType = {
   _id: string;
-  body: string;
+  commentBody: string;
   Author: Omit<ProfileType, 'description'>;
 };
 

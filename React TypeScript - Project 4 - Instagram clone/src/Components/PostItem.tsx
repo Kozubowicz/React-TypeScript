@@ -22,7 +22,6 @@ export function PostItem({ post }: PostProps) {
           profileImgUrl={post.profileImg}
           profileId={post.userId}
           profileName={post.userName}
-          profile={false}
         />
         <Link to={`${post.userId}/${post._id}`} className='PostItem--img Link'>
           <img src={post.imgUrl} className='PostImage' />

@@ -6,7 +6,7 @@ type CommentItemProps = {
 };
 
 export function CommentItem({ comment }: CommentItemProps) {
-  const { Author, body } = comment;
+  const { Author, commentBody } = comment;
   return (
     <>
       <div className='CommentList-item'>
@@ -15,9 +15,8 @@ export function CommentItem({ comment }: CommentItemProps) {
           profileImgUrl={Author.profileImg}
           profileId={Author._id}
           profileName={Author.userName}
-          profile={false}
         />
-        <div className='CommentList-item--body'>{body}</div>
+        <div className='CommentList-item--body'>{commentBody}</div>
       </div>
     </>
   );

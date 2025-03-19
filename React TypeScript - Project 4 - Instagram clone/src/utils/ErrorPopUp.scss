@@ -1,0 +1,17 @@
+.ErrorPopUp {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 5vh 5vw;
+  background-color: rgba($color: #f30000e7, $alpha: 0.9);
+  font-size: xx-large;
+  min-width: 25vw;
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}

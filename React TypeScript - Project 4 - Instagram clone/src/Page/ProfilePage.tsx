@@ -4,6 +4,7 @@ import { useInstaContext } from '../Context/InstaContext';
 import { useEffect, useState } from 'react';
 import { ProfilePageType } from '../utils/Types';
 import { Loader } from '../Components/Loader';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 export function ProfilePage() {
   const [success, setSuccess] = useState<boolean | undefined>(undefined);
@@ -11,9 +12,24 @@ export function ProfilePage() {
     undefined
   );
 
-  const { getUserProfile } = useInstaContext();
+  const [isFollowing, setIsFollowing] = useState<boolean | undefined>(
+    undefined
+  );
+
+  const {
+    getUserProfile,
+    hasFollowed,
+    addRemoveFollow,
+    setErrorMessage,
+    sendMessage,
+    tokenId,
+  } = useInstaContext();
 
   const { userId } = useParams();
+
+  const handleSendMessage = () => {
+    sendMessage();
+  };
 
   useEffect(() => {
     const handleFetchProfile = async () => {
@@ -38,7 +54,34 @@ export function ProfilePage() {
     }
   }, [userId]);
 
-  console.log('profile page');
+  const handleAddRemoveFollow = async () => {
+    if (userId) {
+      setIsFollowing(undefined);
+      try {
+        const result = await addRemoveFollow(userId);
+
+        setIsFollowing(result.isFollowing);
+      } catch (error) {
+        setErrorMessage('An error occurred while trying to follow');
+      }
+    }
+  };
+
+  useEffect(() => {
+    const handleHasFollowed = async () => {
+      if (userId) {
+        try {
+          const result = await hasFollowed(userId);
+
+          setIsFollowing(result);
+        } catch (error) {
+          setIsFollowing(false);
+        }
+      }
+    };
+
+    handleHasFollowed();
+  }, [userId]);
 
   return (
     <>
@@ -58,10 +101,36 @@ export function ProfilePage() {
                     profile={true}
                   />
                 </div>
-                <div className='ProfilePage-About-Header--Reaction'>
-                  <button>Follow</button>
-                  <button>Message</button>
-                </div>
+
+                {tokenId !== userId && (
+                  <div className='ProfilePage-About-Header--Reaction'>
+                    {isFollowing !== undefined ? (
+                      <button
+                        className={`FollowButton ${
+                          isFollowing ? 'FollowButton--following' : ''
+                        } `}
+                        onClick={handleAddRemoveFollow}
+                      >
+                        {isFollowing ? (
+                          <>
+                            <FaHeart /> Following
+                          </>
+                        ) : (
+                          <>
+                            <FaRegHeart />
+                            Follow
+                          </>
+                        )}
+                      </button>
+                    ) : (
+                      <button className='FollowButton'>
+                        <Loader size='10px' />
+                      </button>
+                    )}
+
+                    <button onClick={handleSendMessage}>Message</button>
+                  </div>
+                )}
               </div>
               <div className='ProfilePage-About--des'>
                 {userProfile.description}

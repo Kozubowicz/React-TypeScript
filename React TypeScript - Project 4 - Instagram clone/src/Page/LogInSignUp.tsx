@@ -3,6 +3,7 @@ import { LogInForm } from '../Components/LogInForm';
 import { SignUpForm } from '../Components/SignUpForm';
 import { useInstaContext } from '../Context/InstaContext';
 import { useNavigate } from 'react-router-dom';
+import { FaHome } from 'react-icons/fa';
 
 export function LogInSignUp() {
   const navigate = useNavigate();
@@ -17,10 +18,12 @@ export function LogInSignUp() {
   return (
     <div className='LogInSignUp'>
       <div className='LogInSignUp-close'>
-        <button onClick={() => navigate(-1)}>X</button>
+        <button onClick={() => navigate('/')}>
+          <FaHome />
+        </button>
       </div>
 
-      <div className='Form'>
+      <div className='LogInSignUp-main'>
         <button onClick={() => setLogOrSign(!LogOrSign)}>
           {LogOrSign ? <>Sign Up</> : <>Log In</>}
         </button>

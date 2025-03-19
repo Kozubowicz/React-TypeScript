@@ -1,182 +1,134 @@
+userID:
+
+64c151d5d5f1492d541d0666
+64c151d5d5f1492d541d0665
+64c151d5d5f1492d541d0663
+64c151d5d5f1492d541d0668
+64c151d5d5f1492d541d0664
+64c151d5d5f1492d541d0667
+64c2bd8b07054e0a0ce91ed0
+67b4ddb2f1a00f2afed47ffa
+
+
+postId:
+64c152f1d5f1492d541d066c
+
+64c152f1d5f1492d541d0670
+64c152f1d5f1492d541d0676
+
+64c152f1d5f1492d541d0678
+64c152f1d5f1492d541d067c
+
+64c152f1d5f1492d541d066f
+64c152f1d5f1492d541d066d
+
+64c152f1d5f1492d541d0671
+64c152f1d5f1492d541d066e
+
+64c152f1d5f1492d541d0672
+64c152f1d5f1492d541d0695
+
+64c152f1d5f1492d541d069e
+64c152f1d5f1492d541d0680
+
+64c152f1d5f1492d541d069c
+64c152f1d5f1492d541d06a1
+
+64c152f1d5f1492d541d0692
+64c152f1d5f1492d541d067a
+
+64c152f1d5f1492d541d0683
+64c152f1d5f1492d541d0682
+64c152f1d5f1492d541d068d
+
+
+
 [
   {
-    "_id": "1",
-    "body": "Great article! Thanks for sharing your knowledge.",
-    "Author": {
-      "_id": "101",
-      "userName": "JanKowalski",
-      "profileImg": "https://imgur.com/toYVxDJ.png"
-    }
+    "commentBody": "",
+    "postId": "",
+    "Author": { "_id": "" }
   },
   {
-    "_id": "2",
-    "body": "I disagree with this approach, there is another way to do it.",
-    "Author": {
-      "_id": "102",
-      "userName": "AnnaNowak",
-      "profileImg": "https://imgur.com/X62JoYP.png"
-    }
+    "commentBody": "",
+    "postId": "",
+    "Author": { "_id": "" }
   },
   {
-    "_id": "3",
-    "body": "Very interesting topic, looking forward to more!",
-    "Author": {
-      "_id": "103",
-      "userName": "PiotrW",
-      "profileImg": "https://imgur.com/QymaRWZ.png"
-    }
+    "commentBody": "",
+    "postId": "",
+    "Author": { "_id": "" }
   },
   {
-    "_id": "4",
-    "body": "I have a question, can you provide more details?",
-    "Author": {
-      "_id": "104",
-      "userName": "KasiaM",
-      "profileImg": "https://imgur.com/toYVxDJ.png"
-    }
+    "commentBody": "",
+    "postId": "",
+    "Author": { "_id": "" }
   },
   {
-    "_id": "5",
-    "body": "Great explanation! Everything is clear now.",
-    "Author": {
-      "_id": "105",
-      "userName": "MarekL",
-      "profileImg": "https://imgur.com/X62JoYP.png"
-    }
+    "commentBody": "",
+    "postId": "",
+    "Author": { "_id": "" }
   },
   {
-    "_id": "6",
-    "body": "Has anyone tested this solution? What are the results?",
-    "Author": {
-      "_id": "106",
-      "userName": "OlaD",
-      "profileImg": "https://imgur.com/QymaRWZ.png"
-    }
+    "commentBody": "",
+    "postId": "",
+    "Author": { "_id": "" }
   },
   {
-    "_id": "7",
-    "body": "Thanks for sharing, very helpful!",
-    "Author": {
-      "_id": "107",
-      "userName": "RobertX",
-      "profileImg": "https://imgur.com/toYVxDJ.png"
-    }
+    "commentBody": "",
+    "postId": "",
+    "Author": { "_id": "" }
   },
   {
-    "_id": "8",
-    "body": "I don't fully understand, can you simplify it?",
-    "Author": {
-      "_id": "108",
-      "userName": "NataliaZ",
-      "profileImg": "https://imgur.com/X62JoYP.png"
-    }
+    "commentBody": "",
+    "postId": "",
+    "Author": { "_id": "" }
   },
   {
-    "_id": "9",
-    "body": "Great approach, I will try to implement it!",
-    "Author": {
-      "_id": "109",
-      "userName": "DamianY",
-      "profileImg": "https://imgur.com/QymaRWZ.png"
-    }
-  },
+    "commentBody": "",
+    "postId": "",
+    "Author": { "_id": "" }
+  }
+	,
   {
-    "_id": "10",
-    "body": "I have a different experience, but this works too.",
-    "Author": {
-      "_id": "110",
-      "userName": "KarolinaP",
-      "profileImg": "https://imgur.com/toYVxDJ.png"
-    }
-  },
+    "commentBody": "",
+    "postId": "",
+    "Author": { "_id": "" }
+  }
+	,
   {
-    "_id": "11",
-    "body": "Thanks! I was looking for something like this!",
-    "Author": {
-      "_id": "111",
-      "userName": "AdamB",
-      "profileImg": "https://imgur.com/X62JoYP.png"
-    }
-  },
+    "commentBody": "",
+    "postId": "",
+    "Author": { "_id": "" }
+  }
+	,
   {
-    "_id": "12",
-    "body": "Very well written, congratulations!",
-    "Author": {
-      "_id": "112",
-      "userName": "EwaC",
-      "profileImg": "https://imgur.com/QymaRWZ.png"
-    }
-  },
+    "commentBody": "",
+    "postId": "",
+    "Author": { "_id": "" }
+  }
+	,
   {
-    "_id": "13",
-    "body": "Can you provide sources?",
-    "Author": {
-      "_id": "113",
-      "userName": "TomaszJ",
-      "profileImg": "https://imgur.com/toYVxDJ.png"
-    }
-  },
+    "commentBody": "",
+    "postId": "",
+    "Author": { "_id": "" }
+  }
+	,
   {
-    "_id": "14",
-    "body": "Excellent analysis, I fully agree.",
-    "Author": {
-      "_id": "114",
-      "userName": "MagdaS",
-      "profileImg": "https://imgur.com/X62JoYP.png"
-    }
-  },
+    "commentBody": "",
+    "postId": "",
+    "Author": { "_id": "" }
+  }
+	,
   {
-    "_id": "15",
-    "body": "Amazing! Thanks for sharing.",
-    "Author": {
-      "_id": "115",
-      "userName": "SzymonK",
-      "profileImg": "https://imgur.com/QymaRWZ.png"
-    }
-  },
+    "commentBody": "",
+    "postId": "",
+    "Author": { "_id": "" }
+  }
+	,
   {
-    "_id": "16",
-    "body": "I hope you write more on this topic!",
-    "Author": {
-      "_id": "116",
-      "userName": "ZuzannaD",
-      "profileImg": "https://imgur.com/toYVxDJ.png"
-    }
-  },
-  {
-    "_id": "17",
-    "body": "Interesting perspective, worth considering.",
-    "Author": {
-      "_id": "117",
-      "userName": "PawełN",
-      "profileImg": "https://imgur.com/X62JoYP.png"
-    }
-  },
-  {
-    "_id": "18",
-    "body": "I like the way you explain this.",
-    "Author": {
-      "_id": "118",
-      "userName": "WiktoriaW",
-      "profileImg": "https://imgur.com/QymaRWZ.png"
-    }
-  },
-  {
-    "_id": "19",
-    "body": "Do you have any other materials to recommend?",
-    "Author": {
-      "_id": "119",
-      "userName": "ŁukaszG",
-      "profileImg": "https://imgur.com/toYVxDJ.png"
-    }
-  },
-  {
-    "_id": "20",
-    "body": "Thank you, this really helped me!",
-    "Author": {
-      "_id": "120",
-      "userName": "AlicjaR",
-      "profileImg": "https://imgur.com/X62JoYP.png"
-    }
+    "commentBody": "",
+    "postId": "",
+    "Author": { "_id": "" }
   }
 ]

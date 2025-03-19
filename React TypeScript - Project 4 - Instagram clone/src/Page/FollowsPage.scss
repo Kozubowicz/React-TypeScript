@@ -1,0 +1,25 @@
+.FollowsPage {
+  width: 99%;
+  max-width: 500px;
+  margin: auto;
+  border-left: 1px solid silver;
+  border-right: 1px solid silver;
+
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3vh;
+
+  &-list {
+    width: 100%;
+    &-item {
+      padding: 25px;
+      border-bottom: 1px solid silver;
+
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

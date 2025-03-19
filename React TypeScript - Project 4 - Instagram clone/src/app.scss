@@ -9,6 +9,8 @@
 @use './Page/LogInSignUp.scss';
 @use './Components/PostItem.scss';
 @use './Components/CommentList.scss';
+@use './utils/ErrorPopUp.scss';
+@use './Page/FollowsPage.scss';
 
 body {
   background-color: white;
@@ -46,12 +48,25 @@ button {
   font-weight: 700;
   border: 1px solid slategray;
 
+  align-self: center;
+
   &:hover {
     cursor: pointer;
   }
 }
+
+.FollowButton {
+  display: flex;
+  gap: 1rem;
+  &--following {
+    background-color: rgb(129, 8, 8);
+  }
+}
+
 .ReactionButton {
   background-color: transparent;
+  padding: 0 2px;
+  margin: 0 10npx;
   border: none;
 }
 
@@ -63,7 +78,7 @@ button {
   content: 'comment';
   font-size: x-small;
   font-weight: 100;
-  left: 0;
+  right: 80%;
   bottom: -50%;
   padding: 1px 3px;
   background-color: black;
@@ -79,7 +94,7 @@ button {
   content: 'like';
   font-size: x-small;
   font-weight: 100;
-  left: 0;
+  right: 80%;
   bottom: -50%;
   padding: 1px 3px;
   background-color: black;

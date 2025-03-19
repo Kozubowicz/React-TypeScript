@@ -1,9 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useInstaContext } from '../Context/InstaContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { FaHome } from 'react-icons/fa';
 
 export function NavBarMini() {
+  const navigate = useNavigate();
+
   const { DarkMode, setShowNavBar, showNavBar, tokenId, SignOut } =
     useInstaContext();
   return (
@@ -18,6 +21,9 @@ export function NavBarMini() {
         )}
         <button onClick={() => setShowNavBar(!showNavBar)}>
           <FontAwesomeIcon icon={faBars} />
+        </button>
+        <button className='ReactionButton' onClick={() => navigate('/')}>
+          <FaHome size={26} />
         </button>
       </div>
     </>

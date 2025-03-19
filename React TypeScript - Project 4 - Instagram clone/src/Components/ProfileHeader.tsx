@@ -5,7 +5,7 @@ type ProfileHeaderProps = {
   profileImgUrl: string;
   profileId: string;
   profileName: string;
-  profile: boolean;
+  profile?: boolean;
 };
 
 export function ProfileHeader({
@@ -13,7 +13,7 @@ export function ProfileHeader({
   profileImgUrl,
   profileId,
   profileName,
-  profile,
+  profile = false,
 }: ProfileHeaderProps) {
   return (
     <div className='ProfileHeader'>

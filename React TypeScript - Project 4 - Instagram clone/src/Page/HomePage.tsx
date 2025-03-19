@@ -78,8 +78,8 @@ export function HomePage() {
   return (
     <>
       <div className='HomePage'>
-        <div className='HomePage-item HomePage-item-site' />
-        <div className='HomePage-item'>
+        <div className='HomePage-item HomePage-item--site' />
+        <div className='HomePage-item HomePage-item--center'>
           {success === false && <div>Error during Featching</div>}
           {!!success && posts ? (
             <div className='HomePage-item-postsList'>
@@ -92,7 +92,7 @@ export function HomePage() {
           )}
         </div>
 
-        <div className='HomePage-item HomePage-item-site'>
+        <div className='HomePage-item HomePage-item--site'>
           <HomePageUserHeader />
         </div>
       </div>

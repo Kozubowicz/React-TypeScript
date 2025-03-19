@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useInstaContext } from '../Context/InstaContext';
 import { ProfileHeader } from './ProfileHeader';
+
 import Logo from '/Logo.png';
 
 export function NavBar() {
@@ -8,9 +9,10 @@ export function NavBar() {
     LightDarkModeChanger,
     DarkMode,
     searchUserResult,
-    serachUser,
+    searchUser,
     myProfile,
     showNavBar,
+    SignOut,
   } = useInstaContext();
 
   return (
@@ -35,7 +37,7 @@ export function NavBar() {
           <input
             type='text'
             className={`inputBar ${DarkMode ? 'dark' : ''}`}
-            onChange={(e) => serachUser(e.target.value)}
+            onChange={(e) => searchUser(e.target.value)}
           />
 
           <div className='NavBar-userList'>
@@ -50,17 +52,35 @@ export function NavBar() {
             ))}
           </div>
         </div>
-        {myProfile && (
-          <div style={{ padding: '0vh 0vh 10rem 0vh' }}>
-            <ProfileHeader
-              profileImgSize={'30px'}
-              profileImgUrl={myProfile.profileImg}
-              profileId={myProfile._id}
-              profileName={myProfile.userName}
-              profile={true}
-            />
-          </div>
-        )}
+        <div className='NavBar-profile'>
+          {myProfile ? (
+            <div className='NavBar-profile--menu'>
+              <ul className='NavBar-profile--menu--list'>
+                <Link to='/followers' className='Link'>
+                  <ol className='NavBar-profile--menu--list-item'>Followers</ol>
+                </Link>
+                <ol
+                  className='NavBar-profile--menu--list-item'
+                  onClick={SignOut}
+                >
+                  Sign Out
+                </ol>
+              </ul>
+
+              <ProfileHeader
+                profileImgSize={'30px'}
+                profileImgUrl={myProfile.profileImg}
+                profileId={myProfile._id}
+                profileName={myProfile.userName}
+                profile={true}
+              />
+            </div>
+          ) : (
+            <Link to='/loginsignup' className='Link'>
+              <button>Log In</button>
+            </Link>
+          )}
+        </div>
       </div>
     </>
   );

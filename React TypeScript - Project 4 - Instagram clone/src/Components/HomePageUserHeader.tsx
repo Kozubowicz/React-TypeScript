@@ -12,7 +12,7 @@ export function HomePageUserHeader() {
   return (
     <>
       {tokenId ? (
-        <div className='Form Form-top'>
+        <div className='Form'>
           <button onClick={() => SignOut()}>Sign Out</button>
           {myProfile ? (
             <ProfileHeader

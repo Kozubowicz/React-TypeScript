@@ -3,7 +3,6 @@
   flex-direction: column;
   gap: 5rem;
   margin: 10px 25rem;
-  padding-bottom: 10vh;
   width: auto;
 
   &-About {
@@ -21,8 +20,6 @@
       align-items: center;
       gap: 2rem;
 
-      &--ProfileHeader {
-      }
       &--Reaction {
         display: flex;
         align-items: center;
@@ -33,6 +30,7 @@
       text-align: justify;
     }
   }
+
   &-Gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

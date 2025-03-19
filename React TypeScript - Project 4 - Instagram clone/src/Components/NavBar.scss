@@ -1,29 +1,28 @@
 .NavBar {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 
   align-items: center;
   height: 100vh;
+  background-color: white;
   border-right: 2px solid silver;
   position: sticky;
+  justify-content: space-between;
   top: 0;
+  transition: all 0.5s ease-in-out;
+  z-index: 997;
 
   @media (max-aspect-ratio: 16/18) {
-    display: none;
+    position: fixed;
+    transform: translateX(-110%);
   }
 
   &.mobile {
     display: flex;
-    position: fixed;
-    background-color: white;
-    z-index: 997;
-
-    &.dark {
-      position: fixed;
-      background-color: black;
-      z-index: 997;
-    }
+    transform: translateX(0);
+  }
+  &.dark {
+    background-color: black;
   }
 
   &-LightDarkModeSet {
@@ -48,8 +47,7 @@
     font-size: 1.6rem;
     font-weight: 800;
     gap: 1rem;
-    padding: 1rem 0.5rem;
-    margin-bottom: 1.5rem;
+    padding: 0.5rem;
     text-decoration: none;
     &--label:hover {
       cursor: pointer;
@@ -66,6 +64,51 @@
       border-bottom: 1px solid silver;
       &:hover {
         cursor: pointer;
+      }
+    }
+  }
+
+  &-profile {
+    width: 100%;
+    position: sticky;
+    bottom: 1vh;
+    display: flex;
+    justify-content: center;
+
+    @media (max-aspect-ratio: 16/18) {
+      bottom: 10vh;
+    }
+
+    &--menu {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1vh;
+
+      &--list {
+        width: 90%;
+        padding: 0;
+        font-size: larger;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &-item {
+          color: inherit;
+          text-align: center;
+          font-weight: bolder;
+          padding: 5px;
+          border-bottom: 1px solid silver;
+          box-shadow: inset;
+
+          box-shadow: inset 0 -1px 10px #414141;
+
+          &:hover {
+            cursor: pointer;
+            background-color: rgba($color: white, $alpha: 0.5);
+          }
+        }
       }
     }
   }
